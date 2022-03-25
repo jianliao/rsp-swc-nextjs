@@ -8,9 +8,9 @@ import Book from '@spectrum-icons/workflow/Book';
 import Table from '@spectrum-icons/workflow/Table';
 
 export default function ActionGroupPage() {
-  let [action, setAction] = useState();
-  let [selected, setSelected] = useState(new Set(['grid']));
-  let [multiSelected, setMultiSelected] = useState(new Set([]));
+  let [action, setAction] = useState<any>();
+  let [selected, setSelected] = useState<any>(new Set(['grid']));
+  let [multiSelected, setMultiSelected] = useState<any>(new Set([]));
   const items = [
     { label: 'React', name: 'React' },
     { label: 'Add', name: 'Add' },

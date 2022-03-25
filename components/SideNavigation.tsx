@@ -38,13 +38,13 @@ export default function SideNavigation() {
                   </Link>
                 </li>
                 <li className='spectrum-SideNav-item'>
-                  <Link href='/components/logicgroup'>
-                    <a className='spectrum-SideNav-itemLink'>LogicGroup</a>
+                  <Link href='/components/logicbutton'>
+                    <a className='spectrum-SideNav-itemLink'>LogicButton</a>
                   </Link>
                 </li>
                 <li className='spectrum-SideNav-item'>
-                  <Link href='/components/togglegroup'>
-                    <a className='spectrum-SideNav-itemLink'>ToggleGroup</a>
+                  <Link href='/components/togglebutton'>
+                    <a className='spectrum-SideNav-itemLink'>ToggleButton</a>
                   </Link>
                 </li>
               </ul>
