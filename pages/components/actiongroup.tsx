@@ -1,5 +1,6 @@
 import { ActionGroup, Content, Heading, Item, Text, Well } from "@adobe/react-spectrum";
-import { useState } from "react";
+import { Key, useState } from "react";
+import { Selection } from "@react-types/shared";
 import Draw from '@spectrum-icons/workflow/Draw';
 import Copy from '@spectrum-icons/workflow/Copy';
 import Delete from '@spectrum-icons/workflow/Delete';
@@ -8,9 +9,9 @@ import Book from '@spectrum-icons/workflow/Book';
 import Table from '@spectrum-icons/workflow/Table';
 
 export default function ActionGroupPage() {
-  let [action, setAction] = useState<any>();
-  let [selected, setSelected] = useState<any>(new Set(['grid']));
-  let [multiSelected, setMultiSelected] = useState<any>(new Set([]));
+  let [action, setAction] = useState<Key>();
+  let [selected, setSelected] = useState<Selection>(new Set(['grid']));
+  let [multiSelected, setMultiSelected] = useState<Selection>(new Set([]));
   const items = [
     { label: 'React', name: 'React' },
     { label: 'Add', name: 'Add' },
@@ -82,7 +83,7 @@ export default function ActionGroupPage() {
             <Item key="list">List view</Item>
             <Item key="gallery">Gallery view</Item>
           </ActionGroup>
-          <p>Current selection (controlled): {[...selected]}</p>
+          <p>Current selection (controlled): {[...Array.from(selected)]}</p>
         </Well>
         <Well>
           <ActionGroup
@@ -103,7 +104,7 @@ export default function ActionGroupPage() {
               <Text>Table</Text>
             </Item>
           </ActionGroup>
-          <p>Current (Multi) selections (controlled): {[...multiSelected].join(', ')}</p>
+          <p>Current (Multi) selections (controlled): {[...Array.from(selected)].join(', ')}</p>
         </Well>
       </Content>
     </>

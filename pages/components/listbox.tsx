@@ -3,11 +3,11 @@ import { useState } from "react";
 import Edit from '@spectrum-icons/workflow/Edit';
 import Star from '@spectrum-icons/workflow/Star';
 
-export default function ActionButtonPage() {
+export default function ListBoxPage() {
   const [count, setCount] = useState(0);
   return (
     <>
-      <Heading level={1}>Action Button</Heading>
+      <Heading level={1}>List Box</Heading>
       <Content>
         <Well>
           <ActionButton autoFocus>Auto Focus</ActionButton>

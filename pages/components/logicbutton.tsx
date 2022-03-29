@@ -1,9 +1,12 @@
 import { LogicButton, Content, Heading, Well } from "@adobe/react-spectrum";
 import { useState } from "react";
 
-export default function ButtonPage() {
+function capitalizedFirst(s: string) {
+  return (s !== null && s.length > 0) ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+}
 
-  let [variant, setVariant] = useState<any>('Or');
+export default function ButtonPage() {
+  const [variant, setVariant] = useState<'or' | 'and'>('or');
   return (
     <>
       <Heading level={1}>Button Group</Heading>
@@ -16,10 +19,10 @@ export default function ButtonPage() {
         </Well>
         <Well>
           <LogicButton
-            variant={variant.toLowerCase()}
-            onPress={() => setVariant(variant === 'Or' ? 'And' : 'Or')}
+            variant={variant}
+            onPress={() => setVariant(variant === 'or' ? 'and' : 'or')}
           >
-            {variant}
+            {capitalizedFirst(variant)}
           </LogicButton>
         </Well>
       </Content>

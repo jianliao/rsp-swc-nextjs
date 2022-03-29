@@ -51,6 +51,38 @@ export default function SideNavigation() {
             </li>
             <li className='spectrum-SideNav-item'>
               <a className='spectrum-SideNav-itemLink'>Collections</a>
+              <ul className='spectrum-SideNav'>
+                <li className='spectrum-SideNav-item'>
+                  <Link href='/components/actionmenu'>
+                    <a className='spectrum-SideNav-itemLink'>ActionMenu</a>
+                  </Link>
+                </li>
+                <li className='spectrum-SideNav-item'>
+                  <Link href='/components/listbox'>
+                    <a className='spectrum-SideNav-itemLink'>ListBox</a>
+                  </Link>
+                </li>
+                <li className='spectrum-SideNav-item'>
+                  <Link href='/components/menu'>
+                    <a className='spectrum-SideNav-itemLink'>Menu</a>
+                  </Link>
+                </li>
+                <li className='spectrum-SideNav-item'>
+                  <Link href='/components/menutrigger'>
+                    <a className='spectrum-SideNav-itemLink'>MenuTrigger</a>
+                  </Link>
+                </li>
+                <li className='spectrum-SideNav-item'>
+                  <Link href='/components/tableview'>
+                    <a className='spectrum-SideNav-itemLink'>TableView</a>
+                  </Link>
+                </li>
+                <li className='spectrum-SideNav-item'>
+                  <Link href='/components/togglebutton'>
+                    <a className='spectrum-SideNav-itemLink'>ToggleButton</a>
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className='spectrum-SideNav-item'>
               <a className='spectrum-SideNav-itemLink'>Color</a>

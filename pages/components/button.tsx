@@ -3,8 +3,7 @@ import { useState } from "react";
 import Bell from '@spectrum-icons/workflow/Bell';
 
 export default function ButtonPage() {
-  let [count, setCount] = useState(0);
-
+  const [count, setCount] = useState(0);
   return (
     <>
       <Heading level={1}>Button</Heading>
@@ -31,7 +30,7 @@ export default function ButtonPage() {
           </Button>
         </Well>
         <Well>
-          <Button variant="primary" onPress={() => setCount((c) => c + 1)}>
+          <Button variant="primary" onPress={() => setCount(c => c + 1)}>
             {count} Dogs
           </Button>
         </Well>

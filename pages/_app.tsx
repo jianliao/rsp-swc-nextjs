@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import SiteNavigation from '../components/SideNavigation';
+import SiteNavigation from '@components/SideNavigation';
 
 import type { AppProps } from 'next/app';
 import Script from 'next/script';

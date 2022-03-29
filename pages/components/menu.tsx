@@ -3,11 +3,11 @@ import { useState } from "react";
 import Edit from '@spectrum-icons/workflow/Edit';
 import Star from '@spectrum-icons/workflow/Star';
 
-export default function ActionButtonPage() {
-  const [count, setCount] = useState(0);
+export default function MenuPage() {
+  let [count, setCount] = useState(0);
   return (
     <>
-      <Heading level={1}>Action Button</Heading>
+      <Heading level={1}>Menu</Heading>
       <Content>
         <Well>
           <ActionButton autoFocus>Auto Focus</ActionButton>

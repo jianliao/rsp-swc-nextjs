@@ -3,11 +3,11 @@ import { useState } from "react";
 import Edit from '@spectrum-icons/workflow/Edit';
 import Star from '@spectrum-icons/workflow/Star';
 
-export default function ActionButtonPage() {
-  const [count, setCount] = useState(0);
+export default function TableViewPage() {
+  let [count, setCount] = useState(0);
   return (
     <>
-      <Heading level={1}>Action Button</Heading>
+      <Heading level={1}>Table View</Heading>
       <Content>
         <Well>
           <ActionButton autoFocus>Auto Focus</ActionButton>
@@ -22,7 +22,7 @@ export default function ActionButtonPage() {
           <ActionButton isDisabled>Disabled</ActionButton>
         </Well>
         <Well>
-          <ActionButton onPress={() => setCount(c => c + 1)}>
+          <ActionButton onPress={() => setCount((c) => c + 1)}>
             {count} Edits
           </ActionButton>
         </Well>
