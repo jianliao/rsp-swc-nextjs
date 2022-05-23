@@ -1,6 +1,7 @@
-import { Content, Flex, Heading, Item, Keyboard, Text, Well } from "@adobe/react-spectrum";
+import { Content, Flex, Heading, Item, Keyboard, Text } from "@adobe/react-spectrum";
 import { ActionMenu, Section } from "@react-spectrum/menu";
 import { Key, useState } from "react";
+import CodeExample from "@components/CodeExample";
 import Cut from '@spectrum-icons/workflow/Cut';
 import Copy from '@spectrum-icons/workflow/Copy';
 import Paste from '@spectrum-icons/workflow/Paste';
@@ -41,28 +42,28 @@ export default function ActionMenuPage() {
     <>
       <Heading level={1}>Action Menu</Heading>
       <Content>
-        <Well>
+        <CodeExample title="Base">
           <ActionMenu>
             <Item>Cut</Item>
             <Item>Copy</Item>
             <Item>Paste</Item>
           </ActionMenu>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Programmatically populated">
           <ActionMenu items={actionMenuItems}>
             {/* @ts-ignore */}
             {(item: ItemData) => <Item key={item.name}>{item.name}</Item>}
           </ActionMenu>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="onAction Event">
           <ActionMenu onAction={setAction}>
             <Item key="cut">Cut</Item>
             <Item key="copy">Copy</Item>
             <Item key="paste">Paste</Item>
           </ActionMenu>
-          <p>Action: {action}</p>
-        </Well>
-        <Well>
+          <Heading level={4}>Action: {action}</Heading>
+        </CodeExample>
+        <CodeExample title="Section">
           <ActionMenu>
             <Section title="File">
               <Item key="new">New</Item>
@@ -74,8 +75,8 @@ export default function ActionMenuPage() {
               <Item key="saveAll">Save All</Item>
             </Section>
           </ActionMenu>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Programmatically populated with section">
           <ActionMenu
             items={openWindows}>
             {(item: any) => (
@@ -84,8 +85,8 @@ export default function ActionMenuPage() {
               </Section>
             )}
           </ActionMenu>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Icon">
           <ActionMenu>
             <Item key="cut" textValue="cut">
               <Cut size="S" />
@@ -103,8 +104,8 @@ export default function ActionMenuPage() {
               <Keyboard>⌘V</Keyboard>
             </Item>
           </ActionMenu>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Embedded programmatically populated">
           <ActionMenu
             isQuiet
             items={[
@@ -114,8 +115,8 @@ export default function ActionMenuPage() {
             ]}>
             {(item: any) => <Item>{item.name}</Item>}
           </ActionMenu>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Embedded programmatically populated with disabled item">
           <ActionMenu
             items={[
               { name: 'Undo', id: 'undo' },
@@ -127,8 +128,8 @@ export default function ActionMenuPage() {
             disabledKeys={['redo', 'paste']}>
             {(item: any) => <Item>{item.name}</Item>}
           </ActionMenu>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Align and direction">
           <Flex gap="size-100">
             <ActionMenu align="start">
               <Item key="cut">Cut</Item>
@@ -151,7 +152,21 @@ export default function ActionMenuPage() {
               <Item key="paste">Paste</Item>
             </ActionMenu>
           </Flex>
-        </Well>
+        </CodeExample>
+        <CodeExample title="Flipping">
+          <Flex gap="size-100">
+            <ActionMenu shouldFlip>
+              <Item key="cut">Cut</Item>
+              <Item key="copy">Copy</Item>
+              <Item key="paste">Paste</Item>
+            </ActionMenu>
+            <ActionMenu shouldFlip={false}>
+              <Item key="cut">Cut</Item>
+              <Item key="copy">Copy</Item>
+              <Item key="paste">Paste</Item>
+            </ActionMenu>
+          </Flex>
+        </CodeExample>
       </Content>
     </>
   )

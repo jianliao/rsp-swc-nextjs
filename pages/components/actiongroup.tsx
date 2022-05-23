@@ -1,4 +1,4 @@
-import { ActionGroup, Content, Heading, Item, Text, Well } from "@adobe/react-spectrum";
+import { ActionGroup, Content, Heading, Item, Text } from "@adobe/react-spectrum";
 import { Key, useState } from "react";
 import { Selection } from "@react-types/shared";
 import Draw from '@spectrum-icons/workflow/Draw';
@@ -7,11 +7,12 @@ import Delete from '@spectrum-icons/workflow/Delete';
 import Gradient from '@spectrum-icons/workflow/Gradient';
 import Book from '@spectrum-icons/workflow/Book';
 import Table from '@spectrum-icons/workflow/Table';
+import CodeExample from "@components/CodeExample";
 
 export default function ActionGroupPage() {
-  let [action, setAction] = useState<Key>();
-  let [selected, setSelected] = useState<Selection>(new Set(['grid']));
-  let [multiSelected, setMultiSelected] = useState<Selection>(new Set([]));
+  const [action, setAction] = useState<Key>();
+  const [selected, setSelected] = useState<Selection>(new Set(['grid']));
+  const [multiSelected, setMultiSelected] = useState<Selection>(new Set([]));
   const items = [
     { label: 'React', name: 'React' },
     { label: 'Add', name: 'Add' },
@@ -21,20 +22,20 @@ export default function ActionGroupPage() {
     <>
       <Heading level={1}>Action Group</Heading>
       <Content>
-        <Well>
+        <CodeExample title="Base" code={`<ActionGroup onAction={setAction}>\n  <Item key="add">Add</Item>\n  <Item key="delete">Delete</Item>\n  <Item key="edit">Edit</Item>\n</ActionGroup>\n<Heading level={4}>Action: {action}</Heading>`}>
           <ActionGroup onAction={setAction}>
             <Item key="add">Add</Item>
             <Item key="delete">Delete</Item>
             <Item key="edit">Edit</Item>
           </ActionGroup>
-          <p>Action: {action}</p>
-        </Well>
-        <Well>
+          <Heading level={4}>Action: {action}</Heading>
+        </CodeExample>
+        <CodeExample title="Programmatically populated">
           <ActionGroup items={items}>
             {item => <Item key={item.name}>{item.label}</Item>}
           </ActionGroup>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Icon and label">
           <ActionGroup>
             <Item key="edit">
               <Draw />
@@ -49,8 +50,8 @@ export default function ActionGroupPage() {
               <Text>Delete</Text>
             </Item>
           </ActionGroup>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Icon only">
           <ActionGroup buttonLabelBehavior="hide">
             <Item key="edit">
               <Draw />
@@ -65,15 +66,15 @@ export default function ActionGroupPage() {
               <Text>Delete</Text>
             </Item>
           </ActionGroup>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Single selection mode">
           <ActionGroup selectionMode="single" defaultSelectedKeys={['list']}>
             <Item key="grid">Grid view</Item>
             <Item key="list">List view</Item>
             <Item key="gallery">Gallery view</Item>
           </ActionGroup>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Single selection event">
           <ActionGroup
             selectionMode="single"
             selectedKeys={selected}
@@ -83,9 +84,9 @@ export default function ActionGroupPage() {
             <Item key="list">List view</Item>
             <Item key="gallery">Gallery view</Item>
           </ActionGroup>
-          <p>Current selection (controlled): {[...Array.from(selected)]}</p>
-        </Well>
-        <Well>
+          <Heading level={4}>Current selection (controlled): {[...Array.from(selected)]}</Heading>
+        </CodeExample>
+        <CodeExample title="Multiple selection event">
           <ActionGroup
             selectionMode="multiple"
             selectedKeys={multiSelected}
@@ -104,8 +105,8 @@ export default function ActionGroupPage() {
               <Text>Table</Text>
             </Item>
           </ActionGroup>
-          <p>Current (Multi) selections (controlled): {[...Array.from(selected)].join(', ')}</p>
-        </Well>
+          <Heading level={4}>Current (Multi) selections (controlled): {[...Array.from(selected)].join(', ')}</Heading>
+        </CodeExample>
       </Content>
     </>
   )

@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <View gridArea='sidebar'>
               <SiteNavigation />
             </View>
-            <View backgroundColor='static-white' gridArea='content' paddingStart='size-500' paddingEnd='size-500'>
+            <View backgroundColor='gray-50' gridArea='content' paddingStart='size-500' paddingEnd='size-500'>
               <Component {...pageProps} />
             </View>
             <View backgroundColor='magenta-600' gridArea='footer' />

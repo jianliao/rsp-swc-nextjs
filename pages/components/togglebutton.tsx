@@ -1,8 +1,9 @@
-import { ToggleButton, Content, Heading, Text, Well, Flex, View } from "@adobe/react-spectrum";
+import { ToggleButton, Content, Heading, Text, Flex, View } from "@adobe/react-spectrum";
 import { useState } from "react";
 import Pin from '@spectrum-icons/workflow/PinOff';
 import Brush from '@spectrum-icons/workflow/Brush';
 import Star from '@spectrum-icons/workflow/Star';
+import CodeExample from "@components/CodeExample";
 
 export default function ButtonPage() {
   let [isSelected, setSelected] = useState(false);
@@ -10,18 +11,18 @@ export default function ButtonPage() {
     <>
       <Heading level={1}>Toggle Button</Heading>
       <Content>
-        <Well>
+        <CodeExample title="Icon + Label">
           <ToggleButton>
             <Pin />
             <Text>Icon + Label</Text>
           </ToggleButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Icon only">
           <ToggleButton aria-label="Icon only">
             <Brush />
           </ToggleButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Emphasized">
           <ToggleButton
             isEmphasized
             isSelected={isSelected}
@@ -29,23 +30,23 @@ export default function ButtonPage() {
             aria-label="Favorite">
             <Star />
           </ToggleButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Quiet">
           <ToggleButton isQuiet>
             <Pin />
           </ToggleButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Disabled">
           <ToggleButton isDisabled>
             <Pin />
           </ToggleButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Emphasized and default selected">
           <ToggleButton isEmphasized defaultSelected>
             Pin
           </ToggleButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Background Color">
           <Flex wrap gap="size-250">
             <View
               backgroundColor="static-seafoam-700"
@@ -70,7 +71,7 @@ export default function ButtonPage() {
               </ToggleButton>
             </View>
           </Flex>
-        </Well>
+        </CodeExample>
       </Content>
     </>
   )

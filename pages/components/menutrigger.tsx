@@ -1,42 +1,76 @@
-import { ActionButton, Content, Heading, Text, Well } from "@adobe/react-spectrum";
-import { useState } from "react";
-import Edit from '@spectrum-icons/workflow/Edit';
-import Star from '@spectrum-icons/workflow/Star';
+import { ActionButton, Content, Heading, Item, Menu, MenuTrigger, Text } from "@adobe/react-spectrum";
+import CodeExample from "@components/CodeExample";
+import CloneStamp from '@spectrum-icons/workflow/CloneStamp';
+import Crop from '@spectrum-icons/workflow/Crop';
+import CropRotate from '@spectrum-icons/workflow/CropRotate';
+import Slice from '@spectrum-icons/workflow/Slice';
 
 export default function MenuTriggerPage() {
-  let [count, setCount] = useState(0);
   return (
     <>
       <Heading level={1}>Menu Trigger</Heading>
       <Content>
-        <Well>
-          <ActionButton autoFocus>Auto Focus</ActionButton>
-        </Well>
-        <Well>
-          <ActionButton>Normal</ActionButton>
-        </Well>
-        <Well>
-          <ActionButton isQuiet>Quiet</ActionButton>
-        </Well>
-        <Well>
-          <ActionButton isDisabled>Disabled</ActionButton>
-        </Well>
-        <Well>
-          <ActionButton onPress={() => setCount((c) => c + 1)}>
-            {count} Edits
-          </ActionButton>
-        </Well>
-        <Well>
-          <ActionButton>
-            <Edit />
-            <Text>Icon + Label</Text>
-          </ActionButton>
-        </Well>
-        <Well>
-          <ActionButton aria-label="Icon only">
-            <Star />
-          </ActionButton>
-        </Well>
+        <CodeExample title="Basic" code={`<MenuTrigger>
+  <ActionButton>
+    Edit
+  </ActionButton>
+  <Menu>
+    <Item>Cut</Item>
+    <Item>Copy</Item>
+    <Item>Paste</Item>
+  </Menu>
+</MenuTrigger>`}>
+          <MenuTrigger>
+            <ActionButton>
+              Edit
+            </ActionButton>
+            <Menu onAction={key => alert(key)}>
+              <Item key="cut">Cut</Item>
+              <Item key="copy">Copy</Item>
+              <Item key="paste">Paste</Item>
+              <Item key="replace">Replace</Item>
+            </Menu>
+          </MenuTrigger>
+        </CodeExample>
+        <CodeExample title="Long press" code={`<MenuTrigger trigger="longPress">
+  <ActionButton aria-label="Crop tool" onPress={() => alert('Cropping!')}>
+    <Crop />
+  </ActionButton>
+  <Menu>
+    <Item textValue="Crop Rotate">
+      <CropRotate />
+      <Text>Crop Rotate</Text>
+    </Item>
+    <Item textValue="Slice">
+      <Slice />
+      <Text>Slice</Text>
+    </Item>
+    <Item textValue="Clone stamp">
+      <CloneStamp />
+      <Text>Clone Stamp</Text>
+    </Item>
+  </Menu>
+</MenuTrigger>`}>
+          <MenuTrigger trigger="longPress">
+            <ActionButton aria-label="Crop tool" onPress={() => alert('Cropping!')}>
+              <Crop />
+            </ActionButton>
+            <Menu>
+              <Item textValue="Crop Rotate">
+                <CropRotate />
+                <Text>Crop Rotate</Text>
+              </Item>
+              <Item textValue="Slice">
+                <Slice />
+                <Text>Slice</Text>
+              </Item>
+              <Item textValue="Clone stamp">
+                <CloneStamp />
+                <Text>Clone Stamp</Text>
+              </Item>
+            </Menu>
+          </MenuTrigger>
+        </CodeExample>
       </Content>
     </>
   )

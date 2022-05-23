@@ -1,7 +1,8 @@
-import { ActionButton, Content, Heading, Text, Well } from "@adobe/react-spectrum";
+import { ActionButton, Content, Heading, Text } from "@adobe/react-spectrum";
 import { useState } from "react";
 import Edit from '@spectrum-icons/workflow/Edit';
 import Star from '@spectrum-icons/workflow/Star';
+import CodeExample from "@components/CodeExample";
 
 export default function ActionButtonPage() {
   const [count, setCount] = useState(0);
@@ -9,34 +10,34 @@ export default function ActionButtonPage() {
     <>
       <Heading level={1}>Action Button</Heading>
       <Content>
-        <Well>
+        <CodeExample title="Auto Focus" code={`<ActionButton autoFocus>Auto Focus</ActionButton>`}>
           <ActionButton autoFocus>Auto Focus</ActionButton>
-        </Well>
-        <Well>
-          <ActionButton>Normal</ActionButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Base">
+          <ActionButton>Edit</ActionButton>
+        </CodeExample>
+        <CodeExample title="Quiet">
           <ActionButton isQuiet>Quiet</ActionButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Disabled">
           <ActionButton isDisabled>Disabled</ActionButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="onPress event">
           <ActionButton onPress={() => setCount(c => c + 1)}>
             {count} Edits
           </ActionButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Icon with Label">
           <ActionButton>
             <Edit />
             <Text>Icon + Label</Text>
           </ActionButton>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Icon only">
           <ActionButton aria-label="Icon only">
             <Star />
           </ActionButton>
-        </Well>
+        </CodeExample>
       </Content>
     </>
   )

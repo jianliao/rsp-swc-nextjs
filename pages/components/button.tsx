@@ -1,6 +1,7 @@
-import { Button, Content, Heading, Text, Well } from "@adobe/react-spectrum";
+import { Button, Content, Heading, Text } from "@adobe/react-spectrum";
 import { useState } from "react";
 import Bell from '@spectrum-icons/workflow/Bell';
+import CodeExample from "@components/CodeExample";
 
 export default function ButtonPage() {
   const [count, setCount] = useState(0);
@@ -8,42 +9,42 @@ export default function ButtonPage() {
     <>
       <Heading level={1}>Button</Heading>
       <Content>
-        <Well>
+        <CodeExample title="Auto Focus">
           <Button variant="primary" autoFocus>Auto Focus</Button>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="CTA">
           <Button variant="cta">Call To Action</Button>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Primary">
           <Button variant="primary">Primary</Button>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Secondary">
           <Button variant="secondary">Secondary</Button>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Negative">
           <Button variant="negative">Negative</Button>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Icon + Label">
           <Button variant="primary">
             <Bell />
             <Text>Icon + Label</Text>
           </Button>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Event">
           <Button variant="primary" onPress={() => setCount(c => c + 1)}>
             {count} Dogs
           </Button>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Quiet">
           <Button variant="primary" isQuiet>
             Quiet
           </Button>
-        </Well>
-        <Well>
+        </CodeExample>
+        <CodeExample title="Disabled">
           <Button variant="primary" isDisabled>
             Disabled
           </Button>
-        </Well>
+        </CodeExample>
       </Content>
     </>
   )
