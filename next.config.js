@@ -8,6 +8,12 @@ const withTM = require('next-transpile-modules')(getRSPModules());
 
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
 }
 
 module.exports = withTM(nextConfig);

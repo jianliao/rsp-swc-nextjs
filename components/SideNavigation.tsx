@@ -8,7 +8,7 @@ export default function SideNavigation() {
     <div className={styles.siteSideBar} id='site-overlay'>
       <Link href='/'>
         <a className={styles.siteSideBarHeader}>
-          <h2 className={styles.siteTitle}>RSP + Next.js</h2>
+          <h2 className={styles.siteTitle}>Next+RSP+SWC</h2>
         </a>
       </Link>
       <div className={classNames(styles.scrollable, styles.siteNav)}>
