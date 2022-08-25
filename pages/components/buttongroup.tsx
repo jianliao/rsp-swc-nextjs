@@ -1,32 +1,85 @@
 import { Button, ButtonGroup, Content, Heading } from "@adobe/react-spectrum";
 import CodeExample from "@components/CodeExample";
+import { SpButton, SpButtonGroup } from "@components/swc";
 
 export default function ButtonPage() {
   return (
     <>
       <Heading level={1}>Button Group</Heading>
       <Content>
-        <CodeExample title="Base">
-          <ButtonGroup>
+        <CodeExample
+          title="Base"
+          rspCode={`<ButtonGroup>
+  <Button variant="primary">Rate Now</Button>
+  <Button variant="secondary">No, thanks</Button>
+  <Button variant="secondary">Remind me later</Button>
+</ButtonGroup>`}
+          rspChildren={<ButtonGroup>
             <Button variant="primary">Rate Now</Button>
             <Button variant="secondary">No, thanks</Button>
             <Button variant="secondary">Remind me later</Button>
-          </ButtonGroup>
-        </CodeExample>
-        <CodeExample title="Disabled">
-          <ButtonGroup>
+          </ButtonGroup>}
+          swcChildren={<SpButtonGroup>
+            <SpButton variant="primary">Rate Now</SpButton>
+            <SpButton variant="secondary">No, thanks</SpButton>
+            <SpButton variant="secondary">Remind me later</SpButton>
+          </SpButtonGroup>}
+          swcCode={`<SpButtonGroup>
+  <SpButton variant="primary">Rate Now</SpButton>
+  <SpButton variant="secondary">No, thanks</SpButton>
+  <SpButton variant="secondary">Remind me later</SpButton>
+</SpButtonGroup>`}
+        />
+        <CodeExample
+          title="Disabled"
+          rspCode={`<ButtonGroup>
+  <Button variant="cta">Rate Now</Button>
+  <Button variant="secondary" isDisabled>Disabled</Button>
+  <Button variant="secondary">Remind me later</Button>
+</ButtonGroup>`}
+          rspChildren={<ButtonGroup>
             <Button variant="cta">Rate Now</Button>
             <Button variant="secondary" isDisabled>Disabled</Button>
             <Button variant="secondary">Remind me later</Button>
-          </ButtonGroup>
-        </CodeExample>
-        <CodeExample title="Vertical Orientation">
-          <ButtonGroup orientation="vertical">
+          </ButtonGroup>}
+          swcChildren={
+            <SpButtonGroup>
+              <SpButton variant="cta">Rate Now</SpButton>
+              <SpButton variant="secondary" disabled>No, thanks</SpButton>
+              <SpButton variant="secondary">Remind me later</SpButton>
+            </SpButtonGroup>
+          }
+          swcCode={`<SpButtonGroup>
+  <SpButton variant="cta">Rate Now</SpButton>
+  <SpButton variant="secondary" disabled>No, thanks</SpButton>
+  <SpButton variant="secondary">Remind me later</SpButton>
+</SpButtonGroup>`}
+        />
+        <CodeExample
+          title="Vertical Orientation"
+          rspCode={`<ButtonGroup orientation="vertical">
+  <Button variant="primary">Rate Now</Button>
+  <Button variant="secondary">No, thanks</Button>
+  <Button variant="secondary">Remind me later</Button>
+</ButtonGroup>`}
+          rspChildren={<ButtonGroup orientation="vertical">
             <Button variant="primary">Rate Now</Button>
             <Button variant="secondary">No, thanks</Button>
             <Button variant="secondary">Remind me later</Button>
-          </ButtonGroup>
-        </CodeExample>
+          </ButtonGroup>}
+          swcChildren={
+            <SpButtonGroup vertical="false">
+              <SpButton variant="primary">Rate Now</SpButton>
+              <SpButton variant="secondary">No, thanks</SpButton>
+              <SpButton variant="secondary">Remind me later</SpButton>
+            </SpButtonGroup>
+          }
+          swcCode={`<SpButtonGroup vertical="false">
+  <SpButton variant="primary">Rate Now</SpButton>
+  <SpButton variant="secondary">No, thanks</SpButton>
+  <SpButton variant="secondary">Remind me later</SpButton>
+</SpButtonGroup>`}
+        />
       </Content>
     </>
   )

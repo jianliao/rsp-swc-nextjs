@@ -27,6 +27,10 @@ export default function CodeExample({
   cssChildren?: any,
 }) {
   const [colorStyle, setColorStyle] = useState("light");
+  const [selected, setSelected] = useState('rsp');
+  const handleTabChange = (e: any) => {
+    setSelected(e.target.selected);
+  }
   useEffect(() => {
     const colorSchemeMedia = "(prefers-color-scheme: dark)";
 
@@ -43,17 +47,17 @@ export default function CodeExample({
     <Well>
       {!!title ? <Heading level={3}>{title}</Heading> : undefined}
       {!!description ? <Heading level={4}>{description}</Heading> : undefined}
-      <SpTabs selected="1" size="m">
-        <SpTab label="RSP" value="1">
+      <SpTabs selected={selected} change={handleTabChange} size="m">
+        <SpTab label="RSP" value="rsp">
           RSP
         </SpTab>
-        <SpTab label="SWC" value="2">
+        <SpTab label="SWC" value="swc">
           SWC
         </SpTab>
-        <SpTab label="CSS" value="3">
+        <SpTab label="CSS" value="css">
           CSS
         </SpTab>
-        <SpTabPanel value="1">
+        <SpTabPanel value="rsp">
           <Content>
             <Content>
               {!!rspCode ? (
@@ -65,7 +69,7 @@ export default function CodeExample({
             <Content marginTop="size-75">{rspChildren}</Content>
           </Content>
         </SpTabPanel>
-        <SpTabPanel value="2">
+        <SpTabPanel value="swc">
           <Content>
             <Content>
               {!!swcCode ? (
@@ -77,7 +81,7 @@ export default function CodeExample({
             <Content marginTop="size-75">{swcChildren}</Content>
           </Content>
         </SpTabPanel>
-        <SpTabPanel value="3">
+        <SpTabPanel value="css">
           <Content>
             <Content>
               {!!cssCode ? (

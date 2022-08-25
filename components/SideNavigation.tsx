@@ -63,11 +63,6 @@ export default function SideNavigation() {
                   </Link>
                 </li>
                 <li className='spectrum-SideNav-item'>
-                  <Link href='/components/menu'>
-                    <a className='spectrum-SideNav-itemLink'>Menu</a>
-                  </Link>
-                </li>
-                <li className='spectrum-SideNav-item'>
                   <Link href='/components/menutrigger'>
                     <a className='spectrum-SideNav-itemLink'>MenuTrigger</a>
                   </Link>

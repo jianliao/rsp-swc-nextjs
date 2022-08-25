@@ -11,13 +11,18 @@ export default function ButtonPage() {
     <>
       <Heading level={1}>Toggle Button</Heading>
       <Content>
-        <CodeExample title="Icon + Label">
-          <ToggleButton>
+        <CodeExample title="Icon + Label"
+          rspCode={`<ToggleButton>
+  <Pin />
+  <Text>Icon + Label</Text>
+</ToggleButton>`}
+          rspChildren={<ToggleButton>
             <Pin />
             <Text>Icon + Label</Text>
-          </ToggleButton>
-        </CodeExample>
-        <CodeExample title="Icon only">
+          </ToggleButton>}
+          swcCode="N/A"
+        />
+        {/* <CodeExample title="Icon only">
           <ToggleButton aria-label="Icon only">
             <Brush />
           </ToggleButton>
@@ -71,7 +76,7 @@ export default function ButtonPage() {
               </ToggleButton>
             </View>
           </Flex>
-        </CodeExample>
+        </CodeExample> */}
       </Content>
     </>
   )

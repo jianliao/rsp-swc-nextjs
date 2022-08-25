@@ -10,7 +10,9 @@ export default function MenuTriggerPage() {
     <>
       <Heading level={1}>Menu Trigger</Heading>
       <Content>
-        <CodeExample title="Basic" code={`<MenuTrigger>
+        <CodeExample
+          title="Basic"
+          rspCode={`<MenuTrigger>
   <ActionButton>
     Edit
   </ActionButton>
@@ -19,8 +21,8 @@ export default function MenuTriggerPage() {
     <Item>Copy</Item>
     <Item>Paste</Item>
   </Menu>
-</MenuTrigger>`}>
-          <MenuTrigger>
+</MenuTrigger>`}
+          rspChildren={<MenuTrigger>
             <ActionButton>
               Edit
             </ActionButton>
@@ -30,9 +32,12 @@ export default function MenuTriggerPage() {
               <Item key="paste">Paste</Item>
               <Item key="replace">Replace</Item>
             </Menu>
-          </MenuTrigger>
-        </CodeExample>
-        <CodeExample title="Long press" code={`<MenuTrigger trigger="longPress">
+          </MenuTrigger>}
+          swcCode="N/A"
+        />
+        <CodeExample
+          title="Long press"
+          rspCode={`<MenuTrigger trigger="longPress">
   <ActionButton aria-label="Crop tool" onPress={() => alert('Cropping!')}>
     <Crop />
   </ActionButton>
@@ -50,27 +55,30 @@ export default function MenuTriggerPage() {
       <Text>Clone Stamp</Text>
     </Item>
   </Menu>
-</MenuTrigger>`}>
-          <MenuTrigger trigger="longPress">
-            <ActionButton aria-label="Crop tool" onPress={() => alert('Cropping!')}>
-              <Crop />
-            </ActionButton>
-            <Menu>
-              <Item textValue="Crop Rotate">
-                <CropRotate />
-                <Text>Crop Rotate</Text>
-              </Item>
-              <Item textValue="Slice">
-                <Slice />
-                <Text>Slice</Text>
-              </Item>
-              <Item textValue="Clone stamp">
-                <CloneStamp />
-                <Text>Clone Stamp</Text>
-              </Item>
-            </Menu>
-          </MenuTrigger>
-        </CodeExample>
+</MenuTrigger>`}
+          rspChildren={
+            <MenuTrigger trigger="longPress">
+              <ActionButton aria-label="Crop tool" onPress={() => alert('Cropping!')}>
+                <Crop />
+              </ActionButton>
+              <Menu>
+                <Item textValue="Crop Rotate">
+                  <CropRotate />
+                  <Text>Crop Rotate</Text>
+                </Item>
+                <Item textValue="Slice">
+                  <Slice />
+                  <Text>Slice</Text>
+                </Item>
+                <Item textValue="Clone stamp">
+                  <CloneStamp />
+                  <Text>Clone Stamp</Text>
+                </Item>
+              </Menu>
+            </MenuTrigger>
+          }
+          swcCode="N/A"
+        />
       </Content>
     </>
   )

@@ -62,7 +62,9 @@ export default function TableViewPage() {
         </Link>
       </Flex>
       <Content>
-        <CodeExample title={"Basic"} code={`<TableView
+        <CodeExample
+          title="Basic"
+          rspCode={`<TableView
   aria-label="Example table with static contents"
   selectionMode="multiple"
 >
@@ -93,8 +95,8 @@ export default function TableViewPage() {
       <Cell>1/18/2016</Cell>
     </Row>
   </TableBody>
-</TableView>`}>
-          <TableView
+</TableView>`}
+          rspChildren={<TableView
             aria-label="Example table with static contents"
             selectionMode="multiple"
           >
@@ -125,9 +127,10 @@ export default function TableViewPage() {
                 <Cell>1/18/2016</Cell>
               </Row>
             </TableBody>
-          </TableView>
-        </CodeExample>
-        <CodeExample title={"Programmatically Content"} code={`const columns = [
+          </TableView>}
+          swcCode="N/A"
+        />
+        <CodeExample title={"Programmatically Content"} rspCode={`const columns = [
   {name: 'Name', uid: 'name'},
   {name: 'Type', uid: 'type'},
   {name: 'Date Modified', uid: 'date'}
@@ -159,8 +162,8 @@ const rows = [
       </Row>
     )}
   </TableBody>
-</TableView>`}>
-          <TableView
+</TableView>`}
+          rspChildren={<TableView
             aria-label="Example table with dynamic content"
             maxWidth="size-6000">
             <TableHeader columns={columns}>
@@ -180,10 +183,29 @@ const rows = [
                 </Row>
               )}
             </TableBody>
-          </TableView>
-        </CodeExample>
-        <CodeExample title={"Asynchronous loading"}>
-          <TableView aria-label="example async loading table" height="size-3000">
+          </TableView>}
+          swcCode="N/A"
+        />
+        <CodeExample title={"Asynchronous loading"}
+          rspCode={`<TableView aria-label="example async loading table" height="size-3000">
+  <TableHeader columns={columns2}>
+    {(column) => (
+      <Column align={column.key !== 'name' ? 'end' : 'start'}>
+        {column.name}
+      </Column>
+    )}
+  </TableHeader>
+  <TableBody
+    items={list.items}
+    loadingState={list.loadingState}
+    onLoadMore={list.loadMore}
+  >
+    {(item: any) => (
+      <Row key={item.name}>{(key) => <Cell>{item[key]}</Cell>}</Row>
+    )}
+  </TableBody>
+</TableView>`}
+          rspChildren={<TableView aria-label="example async loading table" height="size-3000">
             <TableHeader columns={columns2}>
               {(column) => (
                 <Column align={column.key !== 'name' ? 'end' : 'start'}>
@@ -200,10 +222,44 @@ const rows = [
                 <Row key={item.name}>{(key) => <Cell>{item[key]}</Cell>}</Row>
               )}
             </TableBody>
-          </TableView>
-        </CodeExample>
-        <CodeExample title={"Selection"}>
-          <TableView
+          </TableView>}
+          swcCode="N/A"
+        />
+        <CodeExample title="Selection"
+          rspCode={`<TableView
+  aria-label="Example table with multiple selection"
+  selectionMode="multiple"
+  defaultSelectedKeys={['2', '4']}
+>
+  <TableHeader>
+    <Column>Name</Column>
+    <Column>Type</Column>
+    <Column align="end">Level</Column>
+  </TableHeader>
+  <TableBody>
+    <Row key="1">
+      <Cell>Charizard</Cell>
+      <Cell>Fire, Flying</Cell>
+      <Cell>67</Cell>
+    </Row>
+    <Row key="2">
+      <Cell>Blastoise</Cell>
+      <Cell>Water</Cell>
+      <Cell>56</Cell>
+    </Row>
+    <Row key="3">
+      <Cell>Venusaur</Cell>
+      <Cell>Grass, Poison</Cell>
+      <Cell>83</Cell>
+    </Row>
+    <Row key="4">
+      <Cell>Pikachu</Cell>
+      <Cell>Electric</Cell>
+      <Cell>100</Cell>
+    </Row>
+  </TableBody>
+</TableView>`}
+          rspChildren={<TableView
             aria-label="Example table with multiple selection"
             selectionMode="multiple"
             defaultSelectedKeys={['2', '4']}
@@ -235,8 +291,9 @@ const rows = [
                 <Cell>100</Cell>
               </Row>
             </TableBody>
-          </TableView>
-        </CodeExample>
+          </TableView>}
+          swcCode="N/A"
+        />
       </Content>
     </>
   )
