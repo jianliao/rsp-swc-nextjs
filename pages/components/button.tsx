@@ -2,7 +2,8 @@ import { Button, Content, Heading, Text } from "@adobe/react-spectrum";
 import { useState } from "react";
 import Bell from '@spectrum-icons/workflow/Bell';
 import CodeExample from "@components/CodeExample";
-import { SpButton, SpIconBell } from "@components/swc";
+import { SpIconBell } from "@swc-nextjs/icon-workflows/IconBell";
+import { SpButton } from "@swc-nextjs/button";
 
 export default function ButtonPage() {
   const [count, setCount] = useState(0);
@@ -15,7 +16,7 @@ export default function ButtonPage() {
           rspCode={`<Button variant="primary" autoFocus>Confirm</Button>`}
           rspChildren={<Button variant="primary" autoFocus>Confirm</Button>}
           swcCode={`<SpButton autofocus>Confirm</SpButton>`}
-          swcChildren={<SpButton variant="primary">Confirm</SpButton>}
+          swcChildren={<SpButton variant="primary" autofocus>Confirm</SpButton>}
         />
         <CodeExample
           title="CTA/Accent"
@@ -72,10 +73,10 @@ export default function ButtonPage() {
           rspChildren={<Button variant="primary" onPress={() => setCount(c => c + 1)}>
             {count} Dogs
           </Button>}
-          swcCode={`<SpButton variant="primary" onclick={() => setCount(c => c + 1)}>
+          swcCode={`<SpButton variant="primary" click={() => setCount(c => c + 1)}>
   {count} Dogs
 </SpButton>`}
-          swcChildren={<SpButton variant="primary" onclick={() => setCount(c => c + 1)}>{count} Dogs</SpButton>}
+          swcChildren={<SpButton variant="primary" click={() => setCount(c => c + 1)}>{count} Dogs</SpButton>}
         />
         <CodeExample
           title="Quiet"

@@ -3,7 +3,9 @@ import { useState } from "react";
 import Edit from '@spectrum-icons/workflow/Edit';
 import Star from '@spectrum-icons/workflow/Star';
 import CodeExample from "@components/CodeExample";
-import { SpActionButton, SpIconEdit, SpIconStar } from "@components/swc";
+import { SpActionButton } from "@swc-nextjs/action-button";
+import { SpIconEdit } from "@swc-nextjs/icon-workflows/IconEdit";
+import { SpIconStar } from "@swc-nextjs/icon-workflows/IconStar";
 
 export default function ActionButtonPage() {
   const [count, setCount] = useState(0);
@@ -47,10 +49,10 @@ export default function ActionButtonPage() {
           rspChildren={<ActionButton onPress={() => setCount(c => c + 1)}>
             {count} Edits
           </ActionButton>}
-          swcCode={`<SpActionButton onclick={() => setCount(c => c + 1)}>
+          swcCode={`<SpActionButton click={() => setCount(c => c + 1)}>
   {count} Edits
 </SpActionButton>`}
-          swcChildren={<SpActionButton onclick={() => setCount(c => c + 1)}>
+          swcChildren={<SpActionButton click={() => setCount(c => c + 1)}>
             {count} Edits
           </SpActionButton>}
         />

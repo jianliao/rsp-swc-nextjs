@@ -2,9 +2,9 @@
 const { readdirSync } = require('fs');
 const { resolve, sep } = require('path');
 const flatten = (arr) => arr.reduce((acc, val) => acc.concat(val));
-const getRSPModules = () =>
-  flatten(['@adobe', '@react-aria', '@react-spectrum', '@react-stately', '@spectrum-icons'].map(scope => readdirSync(resolve(`.${sep}node_modules${sep}${scope}`)).map(pkgName => `${scope}/${pkgName}`)));
-const withTM = require('next-transpile-modules')(getRSPModules());
+const getTSModules = () =>
+  flatten(['@adobe', '@react-aria', '@react-spectrum', '@react-stately', '@spectrum-icons', '@swc-nextjs'].map(scope => readdirSync(resolve(`.${sep}node_modules${sep}${scope}`)).map(pkgName => `${scope}/${pkgName}`)));
+const withTM = require('next-transpile-modules')(getTSModules());
 
 const nextConfig = {
   reactStrictMode: true,
@@ -13,7 +13,7 @@ const nextConfig = {
     images: {
       unoptimized: true,
     },
-  },
+  }
 }
 
 module.exports = withTM(nextConfig);

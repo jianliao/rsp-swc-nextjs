@@ -1,6 +1,7 @@
 import { Button, ButtonGroup, Content, Heading } from "@adobe/react-spectrum";
 import CodeExample from "@components/CodeExample";
-import { SpButton, SpButtonGroup } from "@components/swc";
+import { SpButtonGroup } from "@swc-nextjs/button-group";
+import { SpButton } from "@swc-nextjs/button";
 
 export default function ButtonPage() {
   return (
@@ -68,7 +69,7 @@ export default function ButtonPage() {
             <Button variant="secondary">Remind me later</Button>
           </ButtonGroup>}
           swcChildren={
-            <SpButtonGroup vertical="false">
+            <SpButtonGroup vertical>
               <SpButton variant="primary">Rate Now</SpButton>
               <SpButton variant="secondary">No, thanks</SpButton>
               <SpButton variant="secondary">Remind me later</SpButton>

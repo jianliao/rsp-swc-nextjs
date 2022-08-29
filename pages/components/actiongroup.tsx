@@ -8,7 +8,14 @@ import Gradient from '@spectrum-icons/workflow/Gradient';
 import Book from '@spectrum-icons/workflow/Book';
 import Table from '@spectrum-icons/workflow/Table';
 import CodeExample from "@components/CodeExample";
-import { SpActionGroup, SpActionButton, SpIconDraw, SpIconCopy, SpIconDelete, SpIconGradient, SpIconBook, SpIconTable } from "@components/swc";
+import { SpIconDraw } from "@swc-nextjs/icon-workflows/IconDraw";
+import { SpIconCopy } from "@swc-nextjs/icon-workflows/IconCopy";
+import { SpIconDelete } from "@swc-nextjs/icon-workflows/IconDelete";
+import { SpIconGradient } from "@swc-nextjs/icon-workflows/IconGradient";
+import { SpIconBook } from "@swc-nextjs/icon-workflows/IconBook";
+import { SpIconTable } from "@swc-nextjs/icon-workflows/IconTable";
+import { SpActionGroup } from "@swc-nextjs/action-group";
+import { SpActionButton } from "@swc-nextjs/action-button";
 
 export default function ActionGroupPage() {
   const [action, setAction] = useState<Key>();
@@ -340,7 +347,7 @@ export default function ActionGroupPage() {
             <>
               <SpActionGroup
                 selects="multiple"
-                selectedKeys={multiSelected}
+                selected={swcmMultiSelected}
                 change={handleMultiSelected}
               >
                 <SpActionButton value="gradient">

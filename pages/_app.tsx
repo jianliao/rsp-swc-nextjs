@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import Script from 'next/script';
 import { Provider, SSRProvider, defaultTheme, Grid, View } from '@adobe/react-spectrum';
 import ColorOverride from '@components/ColorOverride';
-import { SpTheme } from '@components/swc';
+import { SpTheme } from '@swc-nextjs/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
