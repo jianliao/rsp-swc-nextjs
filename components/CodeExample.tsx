@@ -28,8 +28,10 @@ export default function CodeExample({
 }) {
   const [colorStyle, setColorStyle] = useState("light");
   const [selected, setSelected] = useState('rsp');
-  const handleTabChange = (e: any) => {
-    setSelected(e.target.selected);
+  const handleTabChange = ({ target: { selected } }: { target: { selected: string } }) => {
+    if (selected) {
+      setSelected(selected);
+    }
   }
   useEffect(() => {
     const colorSchemeMedia = "(prefers-color-scheme: dark)";

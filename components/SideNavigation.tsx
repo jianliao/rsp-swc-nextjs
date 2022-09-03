@@ -43,6 +43,16 @@ export default function SideNavigation() {
                   </Link>
                 </li>
                 <li className='spectrum-SideNav-item'>
+                  <Link href='/components/progresscircle'>
+                    <a className='spectrum-SideNav-itemLink'>ProgressCircle</a>
+                  </Link>
+                </li>
+                <li className='spectrum-SideNav-item'>
+                  <Link href='/components/radio'>
+                    <a className='spectrum-SideNav-itemLink'>RadioButton</a>
+                  </Link>
+                </li>
+                <li className='spectrum-SideNav-item'>
                   <Link href='/components/togglebutton'>
                     <a className='spectrum-SideNav-itemLink'>ToggleButton</a>
                   </Link>

@@ -25,7 +25,7 @@ export default function ActionButtonPage() {
           rspCode={`<ActionButton>Edit</ActionButton>`}
           rspChildren={<ActionButton>Edit</ActionButton>}
           swcCode={`<SpActionButton>Edit</SpActionButton>`}
-          swcChildren={<ActionButton>Edit</ActionButton>}
+          swcChildren={<SpActionButton>Edit</SpActionButton>}
         />
         <CodeExample
           title="Quiet"
