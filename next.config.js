@@ -7,7 +7,7 @@ const getTSModules = () =>
 const withTM = require('next-transpile-modules')(getTSModules());
 
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   experimental: {
     images: {
