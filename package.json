@@ -27,7 +27,7 @@
     "@swc-nextjs/tabs": "^0.0.1",
     "@swc-nextjs/theme": "^0.0.1",
     "classnames": "^2.3.1",
-    "next": "^12.2.5",
+    "next": "^12.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.5.0"

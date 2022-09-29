@@ -8,12 +8,7 @@ const withTM = require('next-transpile-modules')(getTSModules());
 
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true,
-  experimental: {
-    images: {
-      unoptimized: true,
-    },
-  }
+  swcMinify: true
 }
 
 module.exports = withTM(nextConfig);
