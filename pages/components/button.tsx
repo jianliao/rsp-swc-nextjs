@@ -2,7 +2,7 @@ import { Button, Content, Heading, Text } from "@adobe/react-spectrum";
 import { useState } from "react";
 import Bell from '@spectrum-icons/workflow/Bell';
 import CodeExample from "@components/CodeExample";
-import { SpIconBell } from "@swc-nextjs/icon-workflows/IconBell";
+import { SpIconBell } from "@swc-nextjs/icons-workflow/IconBell";
 import { SpButton } from "@swc-nextjs/button";
 
 export default function ButtonPage() {

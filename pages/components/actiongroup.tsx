@@ -8,12 +8,12 @@ import Gradient from '@spectrum-icons/workflow/Gradient';
 import Book from '@spectrum-icons/workflow/Book';
 import Table from '@spectrum-icons/workflow/Table';
 import CodeExample from "@components/CodeExample";
-import { SpIconDraw } from "@swc-nextjs/icon-workflows/IconDraw";
-import { SpIconCopy } from "@swc-nextjs/icon-workflows/IconCopy";
-import { SpIconDelete } from "@swc-nextjs/icon-workflows/IconDelete";
-import { SpIconGradient } from "@swc-nextjs/icon-workflows/IconGradient";
-import { SpIconBook } from "@swc-nextjs/icon-workflows/IconBook";
-import { SpIconTable } from "@swc-nextjs/icon-workflows/IconTable";
+import { SpIconDraw } from "@swc-nextjs/icons-workflow/IconDraw";
+import { SpIconCopy } from "@swc-nextjs/icons-workflow/IconCopy";
+import { SpIconDelete } from "@swc-nextjs/icons-workflow/IconDelete";
+import { SpIconGradient } from "@swc-nextjs/icons-workflow/IconGradient";
+import { SpIconBook } from "@swc-nextjs/icons-workflow/IconBook";
+import { SpIconTable } from "@swc-nextjs/icons-workflow/IconTable";
 import { SpActionGroup } from "@swc-nextjs/action-group";
 import { SpActionButton } from "@swc-nextjs/action-button";
 
