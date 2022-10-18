@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "format": "prettier --write \"**/*.{js,ts,tsx,md,yaml}\"",
     "start": "next start",
     "lint": "next lint"
   },

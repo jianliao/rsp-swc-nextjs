@@ -1,9 +1,9 @@
-import { ToggleButton, Content, Heading, Text, Flex, View } from "@adobe/react-spectrum";
-import { useState } from "react";
+import { ToggleButton, Content, Heading, Text, Flex, View } from '@adobe/react-spectrum';
+import { useState } from 'react';
 import Pin from '@spectrum-icons/workflow/PinOff';
 import Brush from '@spectrum-icons/workflow/Brush';
 import Star from '@spectrum-icons/workflow/Star';
-import CodeExample from "@components/CodeExample";
+import CodeExample from '@components/CodeExample';
 
 export default function ButtonPage() {
   let [isSelected, setSelected] = useState(false);
@@ -11,15 +11,18 @@ export default function ButtonPage() {
     <>
       <Heading level={1}>Toggle Button</Heading>
       <Content>
-        <CodeExample title="Icon + Label"
+        <CodeExample
+          title="Icon + Label"
           rspCode={`<ToggleButton>
   <Pin />
   <Text>Icon + Label</Text>
 </ToggleButton>`}
-          rspChildren={<ToggleButton>
-            <Pin />
-            <Text>Icon + Label</Text>
-          </ToggleButton>}
+          rspChildren={
+            <ToggleButton>
+              <Pin />
+              <Text>Icon + Label</Text>
+            </ToggleButton>
+          }
           swcCode="N/A"
         />
         {/* <CodeExample title="Icon only">
@@ -79,5 +82,5 @@ export default function ButtonPage() {
         </CodeExample> */}
       </Content>
     </>
-  )
+  );
 }

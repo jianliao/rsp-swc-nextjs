@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { Content, Heading, Well } from "@adobe/react-spectrum";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark, prism } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
-import { SpTabs, SpTab, SpTabPanel } from "@swc-nextjs/tabs";
+import { useEffect, useState } from 'react';
+import { Content, Heading, Well } from '@adobe/react-spectrum';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { a11yDark, prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx';
+import { SpTabs, SpTab, SpTabPanel } from '@swc-nextjs/tabs';
 
-SyntaxHighlighter.registerLanguage("jsx", jsx);
+SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 export default function CodeExample({
   title,
@@ -17,33 +17,33 @@ export default function CodeExample({
   cssCode,
   cssChildren,
 }: {
-  title?: any,
-  description?: any,
-  rspCode?: string,
-  rspChildren?: any,
-  swcCode?: string,
-  swcChildren?: any,
-  cssCode?: string,
-  cssChildren?: any,
+  title?: any;
+  description?: any;
+  rspCode?: string;
+  rspChildren?: any;
+  swcCode?: string;
+  swcChildren?: any;
+  cssCode?: string;
+  cssChildren?: any;
 }) {
-  const [colorStyle, setColorStyle] = useState("light");
+  const [colorStyle, setColorStyle] = useState('light');
   const [selected, setSelected] = useState('rsp');
   const handleTabChange = ({ target: { selected } }: { target: { selected: string } }) => {
     if (selected) {
       setSelected(selected);
     }
-  }
+  };
   useEffect(() => {
-    const colorSchemeMedia = "(prefers-color-scheme: dark)";
+    const colorSchemeMedia = '(prefers-color-scheme: dark)';
 
     // Add listener to update styles
-    window.matchMedia(colorSchemeMedia).addEventListener("change", (e) => setColorStyle(e.matches ? "dark" : "light"));
+    window.matchMedia(colorSchemeMedia).addEventListener('change', (e) => setColorStyle(e.matches ? 'dark' : 'light'));
 
     // Initial code style dark/light mode
-    setColorStyle(window.matchMedia(colorSchemeMedia).matches ? "dark" : "light");
+    setColorStyle(window.matchMedia(colorSchemeMedia).matches ? 'dark' : 'light');
 
     // Remove listener
-    return () => window.matchMedia(colorSchemeMedia).removeEventListener("change", () => { });
+    return () => window.matchMedia(colorSchemeMedia).removeEventListener('change', () => {});
   }, []);
   return (
     <Well>
@@ -63,7 +63,7 @@ export default function CodeExample({
           <Content>
             <Content>
               {!!rspCode ? (
-                <SyntaxHighlighter language="jsx" style={colorStyle === "dark" ? a11yDark : prism}>
+                <SyntaxHighlighter language="jsx" style={colorStyle === 'dark' ? a11yDark : prism}>
                   {rspCode}
                 </SyntaxHighlighter>
               ) : undefined}
@@ -75,7 +75,7 @@ export default function CodeExample({
           <Content>
             <Content>
               {!!swcCode ? (
-                <SyntaxHighlighter language="jsx" style={colorStyle === "dark" ? a11yDark : prism}>
+                <SyntaxHighlighter language="jsx" style={colorStyle === 'dark' ? a11yDark : prism}>
                   {swcCode}
                 </SyntaxHighlighter>
               ) : undefined}
@@ -87,7 +87,7 @@ export default function CodeExample({
           <Content>
             <Content>
               {!!cssCode ? (
-                <SyntaxHighlighter language="jsx" style={colorStyle === "dark" ? a11yDark : prism}>
+                <SyntaxHighlighter language="jsx" style={colorStyle === 'dark' ? a11yDark : prism}>
                   {cssCode}
                 </SyntaxHighlighter>
               ) : undefined}

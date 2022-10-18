@@ -1,11 +1,11 @@
-import { ActionButton, Content, Heading, Text } from "@adobe/react-spectrum";
-import { useState } from "react";
+import { ActionButton, Content, Heading, Text } from '@adobe/react-spectrum';
+import { useState } from 'react';
 import Edit from '@spectrum-icons/workflow/Edit';
 import Star from '@spectrum-icons/workflow/Star';
-import CodeExample from "@components/CodeExample";
-import { SpActionButton } from "@swc-nextjs/action-button";
-import { SpIconEdit } from "@swc-nextjs/icons-workflow/IconEdit";
-import { SpIconStar } from "@swc-nextjs/icons-workflow/IconStar";
+import CodeExample from '@components/CodeExample';
+import { SpActionButton } from '@swc-nextjs/action-button';
+import { SpIconEdit } from '@swc-nextjs/icons-workflow/IconEdit';
+import { SpIconStar } from '@swc-nextjs/icons-workflow/IconStar';
 
 export default function ActionButtonPage() {
   const [count, setCount] = useState(0);
@@ -46,15 +46,11 @@ export default function ActionButtonPage() {
           rspCode={`<ActionButton onPress={() => setCount(c => c + 1)}>
   {count} Edits
 </ActionButton>`}
-          rspChildren={<ActionButton onPress={() => setCount(c => c + 1)}>
-            {count} Edits
-          </ActionButton>}
+          rspChildren={<ActionButton onPress={() => setCount((c) => c + 1)}>{count} Edits</ActionButton>}
           swcCode={`<SpActionButton click={() => setCount(c => c + 1)}>
   {count} Edits
 </SpActionButton>`}
-          swcChildren={<SpActionButton click={() => setCount(c => c + 1)}>
-            {count} Edits
-          </SpActionButton>}
+          swcChildren={<SpActionButton click={() => setCount((c) => c + 1)}>{count} Edits</SpActionButton>}
         />
         <CodeExample
           title="Icon with Label"
@@ -62,35 +58,43 @@ export default function ActionButtonPage() {
   <Edit />
   <Text>Icon + Label</Text>
 </ActionButton>`}
-          rspChildren={<ActionButton>
-            <Edit />
-            <Text>Icon + Label</Text>
-          </ActionButton>}
+          rspChildren={
+            <ActionButton>
+              <Edit />
+              <Text>Icon + Label</Text>
+            </ActionButton>
+          }
           swcCode={`<SpActionButton>
   <SpIconEdit slot="icon" />
   Edit
 </SpActionButton>`}
-          swcChildren={<SpActionButton>
-            <SpIconEdit slot="icon" />
-            Icon + Label
-          </SpActionButton>}
+          swcChildren={
+            <SpActionButton>
+              <SpIconEdit slot="icon" />
+              Icon + Label
+            </SpActionButton>
+          }
         />
         <CodeExample
           title="Icon only"
           rspCode={`<ActionButton aria-label="Icon only">
   <Star />
 </ActionButton>`}
-          rspChildren={<ActionButton aria-label="Icon only">
-            <Star />
-          </ActionButton>}
+          rspChildren={
+            <ActionButton aria-label="Icon only">
+              <Star />
+            </ActionButton>
+          }
           swcCode={`<SpActionButton>
   <SpIconStar slot="icon"></SpIconStar>
 </SpActionButton>`}
-          swcChildren={<SpActionButton>
-            <SpIconStar slot="icon"></SpIconStar>
-          </SpActionButton>}
+          swcChildren={
+            <SpActionButton>
+              <SpIconStar slot="icon"></SpIconStar>
+            </SpActionButton>
+          }
         />
       </Content>
     </>
-  )
+  );
 }

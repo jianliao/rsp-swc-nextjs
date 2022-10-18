@@ -1,7 +1,7 @@
-import { Button, ButtonGroup, Content, Heading } from "@adobe/react-spectrum";
-import CodeExample from "@components/CodeExample";
-import { SpButtonGroup } from "@swc-nextjs/button-group";
-import { SpButton } from "@swc-nextjs/button";
+import { Button, ButtonGroup, Content, Heading } from '@adobe/react-spectrum';
+import CodeExample from '@components/CodeExample';
+import { SpButtonGroup } from '@swc-nextjs/button-group';
+import { SpButton } from '@swc-nextjs/button';
 
 export default function ButtonPage() {
   return (
@@ -15,16 +15,20 @@ export default function ButtonPage() {
   <Button variant="secondary">No, thanks</Button>
   <Button variant="secondary">Remind me later</Button>
 </ButtonGroup>`}
-          rspChildren={<ButtonGroup>
-            <Button variant="primary">Rate Now</Button>
-            <Button variant="secondary">No, thanks</Button>
-            <Button variant="secondary">Remind me later</Button>
-          </ButtonGroup>}
-          swcChildren={<SpButtonGroup>
-            <SpButton variant="primary">Rate Now</SpButton>
-            <SpButton variant="secondary">No, thanks</SpButton>
-            <SpButton variant="secondary">Remind me later</SpButton>
-          </SpButtonGroup>}
+          rspChildren={
+            <ButtonGroup>
+              <Button variant="primary">Rate Now</Button>
+              <Button variant="secondary">No, thanks</Button>
+              <Button variant="secondary">Remind me later</Button>
+            </ButtonGroup>
+          }
+          swcChildren={
+            <SpButtonGroup>
+              <SpButton variant="primary">Rate Now</SpButton>
+              <SpButton variant="secondary">No, thanks</SpButton>
+              <SpButton variant="secondary">Remind me later</SpButton>
+            </SpButtonGroup>
+          }
           swcCode={`<SpButtonGroup>
   <SpButton variant="primary">Rate Now</SpButton>
   <SpButton variant="secondary">No, thanks</SpButton>
@@ -38,15 +42,21 @@ export default function ButtonPage() {
   <Button variant="secondary" isDisabled>Disabled</Button>
   <Button variant="secondary">Remind me later</Button>
 </ButtonGroup>`}
-          rspChildren={<ButtonGroup>
-            <Button variant="cta">Rate Now</Button>
-            <Button variant="secondary" isDisabled>Disabled</Button>
-            <Button variant="secondary">Remind me later</Button>
-          </ButtonGroup>}
+          rspChildren={
+            <ButtonGroup>
+              <Button variant="cta">Rate Now</Button>
+              <Button variant="secondary" isDisabled>
+                Disabled
+              </Button>
+              <Button variant="secondary">Remind me later</Button>
+            </ButtonGroup>
+          }
           swcChildren={
             <SpButtonGroup>
               <SpButton variant="cta">Rate Now</SpButton>
-              <SpButton variant="secondary" disabled>No, thanks</SpButton>
+              <SpButton variant="secondary" disabled>
+                No, thanks
+              </SpButton>
               <SpButton variant="secondary">Remind me later</SpButton>
             </SpButtonGroup>
           }
@@ -63,11 +73,13 @@ export default function ButtonPage() {
   <Button variant="secondary">No, thanks</Button>
   <Button variant="secondary">Remind me later</Button>
 </ButtonGroup>`}
-          rspChildren={<ButtonGroup orientation="vertical">
-            <Button variant="primary">Rate Now</Button>
-            <Button variant="secondary">No, thanks</Button>
-            <Button variant="secondary">Remind me later</Button>
-          </ButtonGroup>}
+          rspChildren={
+            <ButtonGroup orientation="vertical">
+              <Button variant="primary">Rate Now</Button>
+              <Button variant="secondary">No, thanks</Button>
+              <Button variant="secondary">Remind me later</Button>
+            </ButtonGroup>
+          }
           swcChildren={
             <SpButtonGroup vertical>
               <SpButton variant="primary">Rate Now</SpButton>
@@ -83,5 +95,5 @@ export default function ButtonPage() {
         />
       </Content>
     </>
-  )
+  );
 }

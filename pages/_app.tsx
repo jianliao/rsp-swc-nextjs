@@ -16,21 +16,22 @@ function MyApp({ Component, pageProps }: AppProps) {
               areas={['sidebar content', 'footer  footer']}
               columns={['2fr', '10fr']}
               rows={['auto', 'size-1000']}
-              height='auto'
-              gap='size-10'>
-              <View gridArea='sidebar'>
+              height="auto"
+              gap="size-10"
+            >
+              <View gridArea="sidebar">
                 <SiteNavigation />
               </View>
-              <View backgroundColor='gray-50' gridArea='content' paddingStart='size-500' paddingEnd='size-500'>
+              <View backgroundColor="gray-50" gridArea="content" paddingStart="size-500" paddingEnd="size-500">
                 <Component {...pageProps} />
               </View>
-              <View backgroundColor='magenta-600' gridArea='footer' />
+              <View backgroundColor="magenta-600" gridArea="footer" />
             </Grid>
           </Provider>
         </SSRProvider>
       </SpTheme>
     </>
-  )
+  );
 }
 
 export default MyApp;

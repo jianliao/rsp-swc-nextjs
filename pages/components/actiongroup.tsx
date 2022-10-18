@@ -1,21 +1,21 @@
-import { ActionGroup, Content, Heading, Item, Text } from "@adobe/react-spectrum";
-import { Key, useState } from "react";
-import { Selection } from "@react-types/shared";
+import { ActionGroup, Content, Heading, Item, Text } from '@adobe/react-spectrum';
+import { Key, useState } from 'react';
+import { Selection } from '@react-types/shared';
 import Draw from '@spectrum-icons/workflow/Draw';
 import Copy from '@spectrum-icons/workflow/Copy';
 import Delete from '@spectrum-icons/workflow/Delete';
 import Gradient from '@spectrum-icons/workflow/Gradient';
 import Book from '@spectrum-icons/workflow/Book';
 import Table from '@spectrum-icons/workflow/Table';
-import CodeExample from "@components/CodeExample";
-import { SpIconDraw } from "@swc-nextjs/icons-workflow/IconDraw";
-import { SpIconCopy } from "@swc-nextjs/icons-workflow/IconCopy";
-import { SpIconDelete } from "@swc-nextjs/icons-workflow/IconDelete";
-import { SpIconGradient } from "@swc-nextjs/icons-workflow/IconGradient";
-import { SpIconBook } from "@swc-nextjs/icons-workflow/IconBook";
-import { SpIconTable } from "@swc-nextjs/icons-workflow/IconTable";
-import { SpActionGroup } from "@swc-nextjs/action-group";
-import { SpActionButton } from "@swc-nextjs/action-button";
+import CodeExample from '@components/CodeExample';
+import { SpIconDraw } from '@swc-nextjs/icons-workflow/IconDraw';
+import { SpIconCopy } from '@swc-nextjs/icons-workflow/IconCopy';
+import { SpIconDelete } from '@swc-nextjs/icons-workflow/IconDelete';
+import { SpIconGradient } from '@swc-nextjs/icons-workflow/IconGradient';
+import { SpIconBook } from '@swc-nextjs/icons-workflow/IconBook';
+import { SpIconTable } from '@swc-nextjs/icons-workflow/IconTable';
+import { SpActionGroup } from '@swc-nextjs/action-group';
+import { SpActionButton } from '@swc-nextjs/action-button';
 
 export default function ActionGroupPage() {
   const [action, setAction] = useState<Key>();
@@ -27,7 +27,7 @@ export default function ActionGroupPage() {
   const items = [
     { label: 'React', name: 'React' },
     { label: 'Add', name: 'Add' },
-    { label: 'Delete', name: 'Delete' }
+    { label: 'Delete', name: 'Delete' },
   ];
   const changed = (e: any) => {
     e.stopPropagation();
@@ -36,11 +36,11 @@ export default function ActionGroupPage() {
   const handleSingleSelectChanged = (e: any) => {
     e.stopPropagation();
     setSwcSelected(e.target.selected);
-  }
+  };
   const handleMultiSelected = (e: any) => {
     e.stopPropagation();
     setSwcMultiSelected(e.target.selected);
-  }
+  };
   return (
     <>
       <Heading level={1}>Action Group</Heading>
@@ -53,14 +53,16 @@ export default function ActionGroupPage() {
   <Item key="edit">Edit</Item>
 </ActionGroup>
 <Heading level={4}>Action: {action}</Heading>`}
-          rspChildren={<>
-            <ActionGroup selectionMode="single" onAction={setAction}>
-              <Item key="add">Add</Item>
-              <Item key="delete">Delete</Item>
-              <Item key="edit">Edit</Item>
-            </ActionGroup>
-            <Heading level={4}>Action: {action}</Heading>
-          </>}
+          rspChildren={
+            <>
+              <ActionGroup selectionMode="single" onAction={setAction}>
+                <Item key="add">Add</Item>
+                <Item key="delete">Delete</Item>
+                <Item key="edit">Edit</Item>
+              </ActionGroup>
+              <Heading level={4}>Action: {action}</Heading>
+            </>
+          }
           swcCode={`<SpActionGroup selects="single" selected={swcAction} change={changed}>
   <SpActionButton value="add">
     Add
@@ -73,41 +75,38 @@ export default function ActionGroupPage() {
   </SpActionButton>
 </SpActionGroup>
 <Heading level={4}>Action: {swcAction}</Heading>`}
-          swcChildren={<>
-            <SpActionGroup selects="single" selected={swcAction} change={changed}>
-              <SpActionButton value="add">
-                Add
-              </SpActionButton>
-              <SpActionButton value="delete">
-                Delete
-              </SpActionButton>
-              <SpActionButton value="edit">
-                Edit
-              </SpActionButton>
-            </SpActionGroup>
-            <Heading level={4}>Action: {swcAction}</Heading>
-          </>}
+          swcChildren={
+            <>
+              <SpActionGroup selects="single" selected={swcAction} change={changed}>
+                <SpActionButton value="add">Add</SpActionButton>
+                <SpActionButton value="delete">Delete</SpActionButton>
+                <SpActionButton value="edit">Edit</SpActionButton>
+              </SpActionGroup>
+              <Heading level={4}>Action: {swcAction}</Heading>
+            </>
+          }
         />
         <CodeExample
           title="Programmatically populated"
           rspCode={`<ActionGroup items={items}>
   {item => <Item key={item.name}>{item.label}</Item>}
 </ActionGroup>`}
-          rspChildren={<ActionGroup items={items}>
-            {item => <Item key={item.name}>{item.label}</Item>}
-          </ActionGroup>}
+          rspChildren={<ActionGroup items={items}>{(item) => <Item key={item.name}>{item.label}</Item>}</ActionGroup>}
           swcCode={`<SpActionGroup>
   {items.map(item => <SpActionButton key={item.name} value={item.name}>
     {item.label}
   </SpActionButton>
   )}
 </SpActionGroup>`}
-          swcChildren={<SpActionGroup>
-            {items.map(item => <SpActionButton key={item.name} value={item.name}>
-              {item.label}
-            </SpActionButton>
-            )}
-          </SpActionGroup>}
+          swcChildren={
+            <SpActionGroup>
+              {items.map((item) => (
+                <SpActionButton key={item.name} value={item.name}>
+                  {item.label}
+                </SpActionButton>
+              ))}
+            </SpActionGroup>
+          }
         />
         <CodeExample
           title="Icon and label"
@@ -125,20 +124,22 @@ export default function ActionGroupPage() {
     <Text>Delete</Text>
   </Item>
 </ActionGroup>`}
-          rspChildren={<ActionGroup>
-            <Item key="edit">
-              <Draw />
-              <Text>Edit</Text>
-            </Item>
-            <Item key="copy">
-              <Copy />
-              <Text>Copy</Text>
-            </Item>
-            <Item key="delete">
-              <Delete />
-              <Text>Delete</Text>
-            </Item>
-          </ActionGroup>}
+          rspChildren={
+            <ActionGroup>
+              <Item key="edit">
+                <Draw />
+                <Text>Edit</Text>
+              </Item>
+              <Item key="copy">
+                <Copy />
+                <Text>Copy</Text>
+              </Item>
+              <Item key="delete">
+                <Delete />
+                <Text>Delete</Text>
+              </Item>
+            </ActionGroup>
+          }
           swcCode={`<SpActionGroup>
   <SpActionButton value="edit">
     <SpIconDraw slot="icon" />
@@ -186,20 +187,22 @@ export default function ActionGroupPage() {
     <Text>Delete</Text>
   </Item>
 </ActionGroup>`}
-          rspChildren={<ActionGroup buttonLabelBehavior="hide">
-            <Item key="edit">
-              <Draw />
-              <Text>Edit</Text>
-            </Item>
-            <Item key="copy">
-              <Copy />
-              <Text>Copy</Text>
-            </Item>
-            <Item key="delete">
-              <Delete />
-              <Text>Delete</Text>
-            </Item>
-          </ActionGroup>}
+          rspChildren={
+            <ActionGroup buttonLabelBehavior="hide">
+              <Item key="edit">
+                <Draw />
+                <Text>Edit</Text>
+              </Item>
+              <Item key="copy">
+                <Copy />
+                <Text>Copy</Text>
+              </Item>
+              <Item key="delete">
+                <Delete />
+                <Text>Delete</Text>
+              </Item>
+            </ActionGroup>
+          }
           swcCode={`<SpActionGroup>
   <SpActionButton value="edit">
     <SpIconDraw slot="icon" />
@@ -239,11 +242,7 @@ export default function ActionGroupPage() {
 <Heading level={4}>Current selection (controlled): {[...Array.from(selected)]}</Heading>`}
           rspChildren={
             <>
-              <ActionGroup
-                selectionMode="single"
-                selectedKeys={selected}
-                onSelectionChange={setSelected}
-              >
+              <ActionGroup selectionMode="single" selectedKeys={selected} onSelectionChange={setSelected}>
                 <Item key="grid">Grid view</Item>
                 <Item key="list">List view</Item>
                 <Item key="gallery">Gallery view</Item>
@@ -266,15 +265,9 @@ export default function ActionGroupPage() {
           swcChildren={
             <>
               <SpActionGroup selects="single" selected={swcSelected} change={handleSingleSelectChanged}>
-                <SpActionButton value="grid">
-                  Grid view
-                </SpActionButton>
-                <SpActionButton value="list">
-                  List view
-                </SpActionButton>
-                <SpActionButton value="gallery">
-                  Gallery view
-                </SpActionButton>
+                <SpActionButton value="grid">Grid view</SpActionButton>
+                <SpActionButton value="list">List view</SpActionButton>
+                <SpActionButton value="gallery">Gallery view</SpActionButton>
               </SpActionGroup>
               <Heading level={4}>Current selection (controlled): {swcSelected}</Heading>
             </>
@@ -303,11 +296,7 @@ export default function ActionGroupPage() {
 <Heading level={4}>Current (Multi) selections (controlled): {[...Array.from(selected)].join(', ')}</Heading>`}
           rspChildren={
             <>
-              <ActionGroup
-                selectionMode="multiple"
-                selectedKeys={multiSelected}
-                onSelectionChange={setMultiSelected}
-              >
+              <ActionGroup selectionMode="multiple" selectedKeys={multiSelected} onSelectionChange={setMultiSelected}>
                 <Item key="gradient">
                   <Gradient />
                   <Text>Gradient</Text>
@@ -321,7 +310,9 @@ export default function ActionGroupPage() {
                   <Text>Table</Text>
                 </Item>
               </ActionGroup>
-              <Heading level={4}>Current (Multi) selections (controlled): {[...Array.from(multiSelected)].join(', ')}</Heading>
+              <Heading level={4}>
+                Current (Multi) selections (controlled): {[...Array.from(multiSelected)].join(', ')}
+              </Heading>
             </>
           }
           swcCode={`<SpActionGroup
@@ -345,11 +336,7 @@ export default function ActionGroupPage() {
 <Heading level={4}>Current (Multi) selections (controlled): {[...Array.from(swcmMultiSelected)].join(', ')}</Heading>`}
           swcChildren={
             <>
-              <SpActionGroup
-                selects="multiple"
-                selected={swcmMultiSelected}
-                change={handleMultiSelected}
-              >
+              <SpActionGroup selects="multiple" selected={swcmMultiSelected} change={handleMultiSelected}>
                 <SpActionButton value="gradient">
                   <SpIconGradient slot="icon" />
                   Gradient
@@ -363,11 +350,13 @@ export default function ActionGroupPage() {
                   Table
                 </SpActionButton>
               </SpActionGroup>
-              <Heading level={4}>Current (Multi) selections (controlled): {[...Array.from(swcmMultiSelected)].join(', ')}</Heading>
+              <Heading level={4}>
+                Current (Multi) selections (controlled): {[...Array.from(swcmMultiSelected)].join(', ')}
+              </Heading>
             </>
           }
         />
       </Content>
     </>
-  )
+  );
 }

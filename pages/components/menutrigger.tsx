@@ -1,5 +1,5 @@
-import { ActionButton, Content, Heading, Item, Menu, MenuTrigger, Text } from "@adobe/react-spectrum";
-import CodeExample from "@components/CodeExample";
+import { ActionButton, Content, Heading, Item, Menu, MenuTrigger, Text } from '@adobe/react-spectrum';
+import CodeExample from '@components/CodeExample';
 import CloneStamp from '@spectrum-icons/workflow/CloneStamp';
 import Crop from '@spectrum-icons/workflow/Crop';
 import CropRotate from '@spectrum-icons/workflow/CropRotate';
@@ -22,17 +22,17 @@ export default function MenuTriggerPage() {
     <Item>Paste</Item>
   </Menu>
 </MenuTrigger>`}
-          rspChildren={<MenuTrigger>
-            <ActionButton>
-              Edit
-            </ActionButton>
-            <Menu onAction={key => alert(key)}>
-              <Item key="cut">Cut</Item>
-              <Item key="copy">Copy</Item>
-              <Item key="paste">Paste</Item>
-              <Item key="replace">Replace</Item>
-            </Menu>
-          </MenuTrigger>}
+          rspChildren={
+            <MenuTrigger>
+              <ActionButton>Edit</ActionButton>
+              <Menu onAction={(key) => alert(key)}>
+                <Item key="cut">Cut</Item>
+                <Item key="copy">Copy</Item>
+                <Item key="paste">Paste</Item>
+                <Item key="replace">Replace</Item>
+              </Menu>
+            </MenuTrigger>
+          }
           swcCode="N/A"
         />
         <CodeExample
@@ -81,5 +81,5 @@ export default function MenuTriggerPage() {
         />
       </Content>
     </>
-  )
+  );
 }

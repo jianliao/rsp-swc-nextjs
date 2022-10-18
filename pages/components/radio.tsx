@@ -1,8 +1,8 @@
-import { Content, Heading, Radio, RadioGroup } from "@adobe/react-spectrum";
-import { useState } from "react";
-import CodeExample from "@components/CodeExample";
-import { SpRadio, SpRadioGroup } from "@swc-nextjs/radio";
-import { SpFieldLabel } from "@swc-nextjs/field-label";
+import { Content, Heading, Radio, RadioGroup } from '@adobe/react-spectrum';
+import { useState } from 'react';
+import CodeExample from '@components/CodeExample';
+import { SpRadio, SpRadioGroup } from '@swc-nextjs/radio';
+import { SpFieldLabel } from '@swc-nextjs/field-label';
 
 export default function RadioPage() {
   let [rspSelected, setRspSelected] = useState('dogs');
@@ -25,10 +25,7 @@ export default function RadioPage() {
   <Radio value="cats">Cats</Radio>
 </RadioGroup>`}
           rspChildren={
-            <RadioGroup
-              label="Favorite pet"
-              value={rspSelected}
-              onChange={setRspSelected}>
+            <RadioGroup label="Favorite pet" value={rspSelected} onChange={setRspSelected}>
               <Radio value="dogs">Dogs</Radio>
               <Radio value="cats">Cats</Radio>
             </RadioGroup>
@@ -45,11 +42,7 @@ export default function RadioPage() {
           swcChildren={
             <>
               <SpFieldLabel for="self">Favorite pet</SpFieldLabel>
-              <SpRadioGroup
-                name="example"
-                change={handleChange}
-                selected="cats"
-                vertical>
+              <SpRadioGroup name="example" change={handleChange} selected="cats" vertical>
                 <SpRadio value="dogs">Dogs</SpRadio>
                 <SpRadio value="cats">Cats</SpRadio>
               </SpRadioGroup>
@@ -67,17 +60,15 @@ export default function RadioPage() {
   <Radio value="dragon">Dragon</Radio>
 </RadioGroup>
 <div>You have selected: {selected}</div>`}
-          rspChildren={<>
-            <RadioGroup
-              label="Favorite avatar"
-              value={selected}
-              onChange={setSelected}
-            >
-              <Radio value="wizard">Wizard</Radio>
-              <Radio value="dragon">Dragon</Radio>
-            </RadioGroup>
-            <div>You have selected: {selected}</div>
-          </>}
+          rspChildren={
+            <>
+              <RadioGroup label="Favorite avatar" value={selected} onChange={setSelected}>
+                <Radio value="wizard">Wizard</Radio>
+                <Radio value="dragon">Dragon</Radio>
+              </RadioGroup>
+              <div>You have selected: {selected}</div>
+            </>
+          }
           swcCode={`<SpFieldLabel for="self">Favorite avatar</SpFieldLabel>
 <SpRadioGroup
   name="example"
@@ -91,11 +82,7 @@ export default function RadioPage() {
           swcChildren={
             <>
               <SpFieldLabel for="self">Favorite avatar</SpFieldLabel>
-              <SpRadioGroup
-                name="example"
-                change={handleSwcChange}
-                selected={selected}
-                vertical>
+              <SpRadioGroup name="example" change={handleSwcChange} selected={selected} vertical>
                 <SpRadio value="wizard">Wizard</SpRadio>
                 <SpRadio value="dragon">Dragon</SpRadio>
               </SpRadioGroup>

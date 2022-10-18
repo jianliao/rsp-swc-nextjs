@@ -1,6 +1,6 @@
-import { Content, Heading, ProgressCircle } from "@adobe/react-spectrum";
-import CodeExample from "@components/CodeExample";
-import { SpProgressCircle } from "@swc-nextjs/progress-circle";
+import { Content, Heading, ProgressCircle } from '@adobe/react-spectrum';
+import CodeExample from '@components/CodeExample';
+import { SpProgressCircle } from '@swc-nextjs/progress-circle';
 
 export default function ProgressCirclePage() {
   return (
@@ -17,10 +17,11 @@ export default function ProgressCirclePage() {
         <CodeExample
           title="Indeterminate"
           rspCode={`<ProgressCircle aria-label="Loading…" size='L' isIndeterminate />`}
-          rspChildren={<ProgressCircle aria-label="Loading…" size='L' isIndeterminate />}
+          rspChildren={<ProgressCircle aria-label="Loading…" size="L" isIndeterminate />}
           swcCode={`<SpProgressCircle label="Loading…" size="l" indeterminate />`}
           swcChildren={<SpProgressCircle label="Loading…" size="l" indeterminate />}
         />
       </Content>
-    </>);
+    </>
+  );
 }
