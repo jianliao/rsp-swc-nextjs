@@ -9,23 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@adobe/react-spectrum": "^3.21.2",
-    "@lit-labs/react": "^1.0.8",
+    "@adobe/react-spectrum": "^3.22.0",
+    "@lit-labs/react": "^1.0.9",
     "@spectrum-css/sidenav": "^3.0.24",
-    "@swc-nextjs/action-button": "^0.0.3",
-    "@swc-nextjs/action-group": "^0.0.3",
-    "@swc-nextjs/action-menu": "^0.0.3",
-    "@swc-nextjs/button": "^0.0.3",
-    "@swc-nextjs/button-group": "^0.0.3",
-    "@swc-nextjs/divider": "^0.0.3",
-    "@swc-nextjs/field-label": "^0.0.3",
-    "@swc-nextjs/icons-ui": "^0.0.3",
-    "@swc-nextjs/icons-workflow": "^0.0.3",
-    "@swc-nextjs/menu": "^0.0.3",
-    "@swc-nextjs/progress-circle": "^0.0.3",
-    "@swc-nextjs/radio": "^0.0.3",
-    "@swc-nextjs/tabs": "^0.0.3",
-    "@swc-nextjs/theme": "^0.0.3",
+    "@swc-nextjs/action-button": "^0.0.4",
+    "@swc-nextjs/action-group": "^0.0.4",
+    "@swc-nextjs/action-menu": "^0.0.4",
+    "@swc-nextjs/button": "^0.0.4",
+    "@swc-nextjs/button-group": "^0.0.4",
+    "@swc-nextjs/divider": "^0.0.4",
+    "@swc-nextjs/field-label": "^0.0.4",
+    "@swc-nextjs/icons-ui": "^0.0.4",
+    "@swc-nextjs/icons-workflow": "^0.0.4",
+    "@swc-nextjs/menu": "^0.0.4",
+    "@swc-nextjs/progress-circle": "^0.0.4",
+    "@swc-nextjs/radio": "^0.0.4",
+    "@swc-nextjs/tabs": "^0.0.4",
+    "@swc-nextjs/theme": "^0.0.4",
     "classnames": "^2.3.1",
     "next": "^12.3.1",
     "react": "^18.2.0",
@@ -37,9 +37,19 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-syntax-highlighter": "^15.5.4",
-    "eslint": "^8.22.0",
-    "eslint-config-next": "^12.2.5",
+    "eslint": "^8.25.0",
+    "eslint-config-next": "^12.3.1",
+    "lint-staged": "^13.0.3",
     "next-transpile-modules": "^9.0.0",
-    "typescript": "^4.7.4"
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.1",
+    "string-replace-loader": "^3.1.0",
+    "typescript": "^4.8.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
   }
 }
