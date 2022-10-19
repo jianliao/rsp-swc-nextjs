@@ -7,14 +7,14 @@ export default function LayoutPage() {
     <>
       <Heading level={1}>Layout</Heading>
       <Content>
-        {
-          Array(13).fill(null).map((v, i) =>
+        {Array(13)
+          .fill(null)
+          .map((v, i) => (
             <>
               <Heading level={2}>{`${i} : ${12 - i}`}</Heading>
               <ContentType leftColumn={i} rightColumn={12 - i} />
             </>
-          )
-        }
+          ))}
       </Content>
     </>
   );
