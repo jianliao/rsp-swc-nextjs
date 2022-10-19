@@ -87,6 +87,11 @@ export default function SideNavigation() {
                     <a className="spectrum-SideNav-itemLink">ToggleButton</a>
                   </Link>
                 </li>
+                <li className="spectrum-SideNav-item">
+                  <Link href="/components/layout">
+                    <a className="spectrum-SideNav-itemLink">Layout</a>
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="spectrum-SideNav-item">
