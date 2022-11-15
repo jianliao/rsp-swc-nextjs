@@ -4,12 +4,14 @@ import type { AppProps } from 'next/app';
 import Script from 'next/script';
 import { Provider, SSRProvider, defaultTheme, Grid, View } from '@adobe/react-spectrum';
 import { SpTheme } from '@swc-nextjs/theme';
+import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const isDarkTheme = useThemeDetector();
   return (
     <>
       <Script src="/typekit.js" />
-      <SpTheme theme="spectrum" color="light" scale="medium">
+      <SpTheme theme="spectrum" color={isDarkTheme ? 'dark' : 'light'} scale="medium">
         <SSRProvider>
           <Provider theme={defaultTheme}>
             <Grid
@@ -33,5 +35,21 @@ function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+const useThemeDetector = () => {
+  const getCurrentTheme = () =>
+    typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+  const [isDarkTheme, setIsDarkTheme] = useState(getCurrentTheme());
+  const mqListener = (e: { matches: boolean | ((prevState: boolean) => boolean) }) => {
+    setIsDarkTheme(e.matches);
+  };
+
+  useEffect(() => {
+    const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)');
+    darkThemeMq.addEventListener('change', mqListener);
+    return () => darkThemeMq.removeEventListener('change', mqListener);
+  }, []);
+  return isDarkTheme;
+};
 
 export default MyApp;

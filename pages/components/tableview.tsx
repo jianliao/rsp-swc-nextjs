@@ -9,8 +9,16 @@ import {
   TableHeader,
   Link,
   Flex,
-  Divider,
 } from '@adobe/react-spectrum';
+import {
+  SpTable,
+  SpTableBody,
+  SpTableCell,
+  SpTableCheckboxCell,
+  SpTableHead,
+  SpTableHeadCell,
+  SpTableRow,
+} from '@swc-nextjs/table';
 import CodeExample from '@components/CodeExample';
 import { useAsyncList } from '@react-stately/data';
 
@@ -135,6 +143,40 @@ export default function TableViewPage() {
             </TableView>
           }
           swcCode="N/A"
+          //     swcChildren={<SpTable size="m">
+          //     <SpTableHead>
+          //         <SpTableHeadCell>Column Title</SpTableHeadCell>
+          //         <SpTableHeadCell>Column Title</SpTableHeadCell>
+          //         <SpTableHeadCell>Column Title</SpTableHeadCell>
+          //     </SpTableHead>
+          //     <SpTableBody>
+          //         <SpTableRow>
+          //             <SpTableCell>Row Item Alpha</SpTableCell>
+          //             <SpTableCell>Row Item Alpha</SpTableCell>
+          //             <SpTableCell>Row Item Alpha</SpTableCell>
+          //         </SpTableRow>
+          //         <SpTableRow>
+          //             <SpTableCell>Row Item Bravo</SpTableCell>
+          //             <SpTableCell>Row Item Bravo</SpTableCell>
+          //             <SpTableCell>Row Item Bravo</SpTableCell>
+          //         </SpTableRow>
+          //         <SpTableRow>
+          //             <SpTableCell>Row Item Charlie</SpTableCell>
+          //             <SpTableCell>Row Item Charlie</SpTableCell>
+          //             <SpTableCell>Row Item Charlie</SpTableCell>
+          //         </SpTableRow>
+          //         <SpTableRow>
+          //             <SpTableCell>Row Item Delta</SpTableCell>
+          //             <SpTableCell>Row Item Delta</SpTableCell>
+          //             <SpTableCell>Row Item Delta</SpTableCell>
+          //         </SpTableRow>
+          //         <SpTableRow>
+          //             <SpTableCell>Row Item Echo</SpTableCell>
+          //             <SpTableCell>Row Item Echo</SpTableCell>
+          //             <SpTableCell>Row Item Echo</SpTableCell>
+          //         </SpTableRow>
+          //     </SpTableBody>
+          // </SpTable>}
         />
         <CodeExample
           title={'Programmatically Content'}
