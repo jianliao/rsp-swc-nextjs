@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@adobe/react-spectrum": "^3.22.0",
+    "@adobe/react-spectrum": "^3.23.0",
     "@lit-labs/react": "^1.0.9",
     "@spectrum-css/sidenav": "^3.0.24",
     "@swc-nextjs/action-button": "0.0.7",
