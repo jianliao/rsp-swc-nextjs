@@ -3,7 +3,7 @@ import SiteNavigation from '@components/SideNavigation';
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
 import { Provider, SSRProvider, defaultTheme, Grid, View } from '@adobe/react-spectrum';
-import { SpTheme } from '@swc-nextjs/theme';
+import { SpTheme } from '@utils/theme';
 import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {

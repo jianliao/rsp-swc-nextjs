@@ -1,8 +1,8 @@
 import { Content, Heading, Radio, RadioGroup } from '@adobe/react-spectrum';
 import { useState } from 'react';
 import CodeExample from '@components/CodeExample';
-import { SpRadio, SpRadioGroup } from '@swc-nextjs/radio';
-import { SpFieldLabel } from '@swc-nextjs/field-label';
+import { SpRadio, SpRadioGroup } from '@swc-next/radio';
+import { SpFieldLabel } from '@swc-next/field-label';
 
 export default function RadioPage() {
   let [rspSelected, setRspSelected] = useState('dogs');

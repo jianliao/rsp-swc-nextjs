@@ -3,9 +3,9 @@ import { useState } from 'react';
 import Edit from '@spectrum-icons/workflow/Edit';
 import Star from '@spectrum-icons/workflow/Star';
 import CodeExample from '@components/CodeExample';
-import { SpActionButton } from '@swc-nextjs/action-button';
-import { SpIconEdit } from '@swc-nextjs/icons-workflow/IconEdit';
-import { SpIconStar } from '@swc-nextjs/icons-workflow/IconStar';
+import { SpActionButton } from '@swc-next/action-button';
+import { SpIconEdit } from '@swc-next/icons-workflow/IconEdit';
+import { SpIconStar } from '@swc-next/icons-workflow/IconStar';
 
 export default function ActionButtonPage() {
   const [count, setCount] = useState(0);

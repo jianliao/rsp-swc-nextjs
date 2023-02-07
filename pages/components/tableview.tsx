@@ -18,7 +18,7 @@ import {
   SpTableHead,
   SpTableHeadCell,
   SpTableRow,
-} from '@swc-nextjs/table';
+} from '@swc-next/table';
 import CodeExample from '@components/CodeExample';
 import { useAsyncList } from '@react-stately/data';
 

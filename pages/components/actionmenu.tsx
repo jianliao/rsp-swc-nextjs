@@ -5,11 +5,11 @@ import CodeExample from '@components/CodeExample';
 import Cut from '@spectrum-icons/workflow/Cut';
 import Copy from '@spectrum-icons/workflow/Copy';
 import Paste from '@spectrum-icons/workflow/Paste';
-import { SpIconCut } from '@swc-nextjs/icons-workflow/IconCut';
-import { SpIconCopy } from '@swc-nextjs/icons-workflow/IconCopy';
-import { SpIconPaste } from '@swc-nextjs/icons-workflow/IconPaste';
-import { SpActionMenu } from '@swc-nextjs/action-menu';
-import { SpMenuGroup, SpMenuItem } from '@swc-nextjs/menu';
+import { SpIconCut } from '@swc-next/icons-workflow/IconCut';
+import { SpIconCopy } from '@swc-next/icons-workflow/IconCopy';
+import { SpIconPaste } from '@swc-next/icons-workflow/IconPaste';
+import { SpActionMenu } from '@swc-next/action-menu';
+import { SpMenuGroup, SpMenuItem } from '@swc-next/menu';
 
 type ItemData = {
   name: string;

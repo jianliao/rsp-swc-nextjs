@@ -3,7 +3,7 @@ import { Content, Heading, Well } from '@adobe/react-spectrum';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark, prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx';
-import { SpTabs, SpTab, SpTabPanel } from '@swc-nextjs/tabs';
+import { SpTabs, SpTab, SpTabPanel } from '@swc-next/tabs';
 
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 

@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, Content, Heading } from '@adobe/react-spectrum';
 import CodeExample from '@components/CodeExample';
-import { SpButtonGroup } from '@swc-nextjs/button-group';
-import { SpButton } from '@swc-nextjs/button';
+import { SpButtonGroup } from '@swc-next/button-group';
+import { SpButton } from '@swc-next/button';
 
 export default function ButtonPage() {
   return (

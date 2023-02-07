@@ -8,14 +8,14 @@ import Gradient from '@spectrum-icons/workflow/Gradient';
 import Book from '@spectrum-icons/workflow/Book';
 import Table from '@spectrum-icons/workflow/Table';
 import CodeExample from '@components/CodeExample';
-import { SpIconDraw } from '@swc-nextjs/icons-workflow/IconDraw';
-import { SpIconCopy } from '@swc-nextjs/icons-workflow/IconCopy';
-import { SpIconDelete } from '@swc-nextjs/icons-workflow/IconDelete';
-import { SpIconGradient } from '@swc-nextjs/icons-workflow/IconGradient';
-import { SpIconBook } from '@swc-nextjs/icons-workflow/IconBook';
-import { SpIconTable } from '@swc-nextjs/icons-workflow/IconTable';
-import { SpActionGroup } from '@swc-nextjs/action-group';
-import { SpActionButton } from '@swc-nextjs/action-button';
+import { SpIconDraw } from '@swc-next/icons-workflow/IconDraw';
+import { SpIconCopy } from '@swc-next/icons-workflow/IconCopy';
+import { SpIconDelete } from '@swc-next/icons-workflow/IconDelete';
+import { SpIconGradient } from '@swc-next/icons-workflow/IconGradient';
+import { SpIconBook } from '@swc-next/icons-workflow/IconBook';
+import { SpIconTable } from '@swc-next/icons-workflow/IconTable';
+import { SpActionGroup } from '@swc-next/action-group';
+import { SpActionButton } from '@swc-next/action-button';
 
 export default function ActionGroupPage() {
   const [action, setAction] = useState<Key>();

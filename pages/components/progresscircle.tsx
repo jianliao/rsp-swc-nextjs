@@ -1,6 +1,6 @@
 import { Content, Heading, ProgressCircle } from '@adobe/react-spectrum';
 import CodeExample from '@components/CodeExample';
-import { SpProgressCircle } from '@swc-nextjs/progress-circle';
+import { SpProgressCircle } from '@swc-next/progress-circle';
 
 export default function ProgressCirclePage() {
   return (

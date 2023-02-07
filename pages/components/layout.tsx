@@ -1,6 +1,6 @@
 import { Content, Heading } from '@adobe/react-spectrum';
 import ContentType from '@components/ContentType';
-import { SpDivider } from '@swc-nextjs/divider';
+import { SpDivider } from '@swc-next/divider';
 
 export default function LayoutPage() {
   return (

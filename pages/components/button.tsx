@@ -2,8 +2,8 @@ import { Button, Content, Heading, Text } from '@adobe/react-spectrum';
 import { useState } from 'react';
 import Bell from '@spectrum-icons/workflow/Bell';
 import CodeExample from '@components/CodeExample';
-import { SpIconBell } from '@swc-nextjs/icons-workflow/IconBell';
-import { SpButton } from '@swc-nextjs/button';
+import { SpIconBell } from '@swc-next/icons-workflow/IconBell';
+import { SpButton } from '@swc-next/button';
 
 export default function ButtonPage() {
   const [count, setCount] = useState(0);
