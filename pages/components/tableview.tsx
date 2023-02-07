@@ -142,41 +142,76 @@ export default function TableViewPage() {
               </TableBody>
             </TableView>
           }
-          swcCode="N/A"
-          //     swcChildren={<SpTable size="m">
-          //     <SpTableHead>
-          //         <SpTableHeadCell>Column Title</SpTableHeadCell>
-          //         <SpTableHeadCell>Column Title</SpTableHeadCell>
-          //         <SpTableHeadCell>Column Title</SpTableHeadCell>
-          //     </SpTableHead>
-          //     <SpTableBody>
-          //         <SpTableRow>
-          //             <SpTableCell>Row Item Alpha</SpTableCell>
-          //             <SpTableCell>Row Item Alpha</SpTableCell>
-          //             <SpTableCell>Row Item Alpha</SpTableCell>
-          //         </SpTableRow>
-          //         <SpTableRow>
-          //             <SpTableCell>Row Item Bravo</SpTableCell>
-          //             <SpTableCell>Row Item Bravo</SpTableCell>
-          //             <SpTableCell>Row Item Bravo</SpTableCell>
-          //         </SpTableRow>
-          //         <SpTableRow>
-          //             <SpTableCell>Row Item Charlie</SpTableCell>
-          //             <SpTableCell>Row Item Charlie</SpTableCell>
-          //             <SpTableCell>Row Item Charlie</SpTableCell>
-          //         </SpTableRow>
-          //         <SpTableRow>
-          //             <SpTableCell>Row Item Delta</SpTableCell>
-          //             <SpTableCell>Row Item Delta</SpTableCell>
-          //             <SpTableCell>Row Item Delta</SpTableCell>
-          //         </SpTableRow>
-          //         <SpTableRow>
-          //             <SpTableCell>Row Item Echo</SpTableCell>
-          //             <SpTableCell>Row Item Echo</SpTableCell>
-          //             <SpTableCell>Row Item Echo</SpTableCell>
-          //         </SpTableRow>
-          //     </SpTableBody>
-          // </SpTable>}
+          swcCode={`<SpTable size="m">
+  <SpTableHead>
+    <SpTableHeadCell>Column Title</SpTableHeadCell>
+    <SpTableHeadCell>Column Title</SpTableHeadCell>
+    <SpTableHeadCell>Column Title</SpTableHeadCell>
+  </SpTableHead>
+  <SpTableBody>
+    <SpTableRow>
+      <SpTableCell>Row Item Alpha</SpTableCell>
+      <SpTableCell>Row Item Alpha</SpTableCell>
+      <SpTableCell>Row Item Alpha</SpTableCell>
+    </SpTableRow>
+    <SpTableRow>
+      <SpTableCell>Row Item Bravo</SpTableCell>
+      <SpTableCell>Row Item Bravo</SpTableCell>
+      <SpTableCell>Row Item Bravo</SpTableCell>
+    </SpTableRow>
+    <SpTableRow>
+      <SpTableCell>Row Item Charlie</SpTableCell>
+      <SpTableCell>Row Item Charlie</SpTableCell>
+      <SpTableCell>Row Item Charlie</SpTableCell>
+    </SpTableRow>
+    <SpTableRow>
+      <SpTableCell>Row Item Delta</SpTableCell>
+      <SpTableCell>Row Item Delta</SpTableCell>
+      <SpTableCell>Row Item Delta</SpTableCell>
+    </SpTableRow>
+    <SpTableRow>
+      <SpTableCell>Row Item Echo</SpTableCell>
+      <SpTableCell>Row Item Echo</SpTableCell>
+      <SpTableCell>Row Item Echo</SpTableCell>
+    </SpTableRow>
+  </SpTableBody>
+</SpTable>`}
+          swcChildren={
+            <SpTable size="m">
+              <SpTableHead>
+                <SpTableHeadCell>Column Title</SpTableHeadCell>
+                <SpTableHeadCell>Column Title</SpTableHeadCell>
+                <SpTableHeadCell>Column Title</SpTableHeadCell>
+              </SpTableHead>
+              <SpTableBody>
+                <SpTableRow>
+                  <SpTableCell>Row Item Alpha</SpTableCell>
+                  <SpTableCell>Row Item Alpha</SpTableCell>
+                  <SpTableCell>Row Item Alpha</SpTableCell>
+                </SpTableRow>
+                <SpTableRow>
+                  <SpTableCell>Row Item Bravo</SpTableCell>
+                  <SpTableCell>Row Item Bravo</SpTableCell>
+                  <SpTableCell>Row Item Bravo</SpTableCell>
+                </SpTableRow>
+                <SpTableRow>
+                  <SpTableCell>Row Item Charlie</SpTableCell>
+                  <SpTableCell>Row Item Charlie</SpTableCell>
+                  <SpTableCell>Row Item Charlie</SpTableCell>
+                </SpTableRow>
+                <SpTableRow>
+                  <SpTableCell>Row Item Delta</SpTableCell>
+                  <SpTableCell>Row Item Delta</SpTableCell>
+                  <SpTableCell>Row Item Delta</SpTableCell>
+                </SpTableRow>
+                <SpTableRow>
+                  <SpTableCell>Row Item Echo</SpTableCell>
+                  <SpTableCell>Row Item Echo</SpTableCell>
+                  <SpTableCell>Row Item Echo</SpTableCell>
+                </SpTableRow>
+              </SpTableBody>
+            </SpTable>
+          }
         />
         <CodeExample
           title={'Programmatically Content'}
@@ -336,7 +371,92 @@ const rows = [
               </TableBody>
             </TableView>
           }
-          swcCode="N/A"
+          swcCode={`<SpTable
+  size="m"
+  selects="single"
+  selected={['row3']}
+  change={(e: any) => {
+    e.stopPropagation();
+    console.log(e.target.selected);
+  }}
+>
+  <SpTableHead>
+    <SpTableHeadCell>Column Title</SpTableHeadCell>
+    <SpTableHeadCell>Column Title</SpTableHeadCell>
+    <SpTableHeadCell>Column Title</SpTableHeadCell>
+  </SpTableHead>
+  <SpTableBody>
+    <SpTableRow value="row1">
+      <SpTableCell>Row Item Alpha</SpTableCell>
+      <SpTableCell>Row Item Alpha</SpTableCell>
+      <SpTableCell>Row Item Alpha</SpTableCell>
+    </SpTableRow>
+    <SpTableRow value="row2">
+      <SpTableCell>Row Item Bravo</SpTableCell>
+      <SpTableCell>Row Item Bravo</SpTableCell>
+      <SpTableCell>Row Item Bravo</SpTableCell>
+    </SpTableRow>
+    <SpTableRow value="row3">
+      <SpTableCell>Row Item Charlie</SpTableCell>
+      <SpTableCell>Row Item Charlie</SpTableCell>
+      <SpTableCell>Row Item Charlie</SpTableCell>
+    </SpTableRow>
+    <SpTableRow value="row4">
+      <SpTableCell>Row Item Delta</SpTableCell>
+      <SpTableCell>Row Item Delta</SpTableCell>
+      <SpTableCell>Row Item Delta</SpTableCell>
+    </SpTableRow>
+    <SpTableRow value="row5">
+      <SpTableCell>Row Item Echo</SpTableCell>
+      <SpTableCell>Row Item Echo</SpTableCell>
+      <SpTableCell>Row Item Echo</SpTableCell>
+    </SpTableRow>
+  </SpTableBody>
+</SpTable>`}
+          swcChildren={
+            <SpTable
+              size="m"
+              selects="single"
+              selected={['row3']}
+              change={(e: any) => {
+                e.stopPropagation();
+                console.log(e.target.selected);
+              }}
+            >
+              <SpTableHead>
+                <SpTableHeadCell>Column Title</SpTableHeadCell>
+                <SpTableHeadCell>Column Title</SpTableHeadCell>
+                <SpTableHeadCell>Column Title</SpTableHeadCell>
+              </SpTableHead>
+              <SpTableBody>
+                <SpTableRow value="row1">
+                  <SpTableCell>Row Item Alpha</SpTableCell>
+                  <SpTableCell>Row Item Alpha</SpTableCell>
+                  <SpTableCell>Row Item Alpha</SpTableCell>
+                </SpTableRow>
+                <SpTableRow value="row2">
+                  <SpTableCell>Row Item Bravo</SpTableCell>
+                  <SpTableCell>Row Item Bravo</SpTableCell>
+                  <SpTableCell>Row Item Bravo</SpTableCell>
+                </SpTableRow>
+                <SpTableRow value="row3">
+                  <SpTableCell>Row Item Charlie</SpTableCell>
+                  <SpTableCell>Row Item Charlie</SpTableCell>
+                  <SpTableCell>Row Item Charlie</SpTableCell>
+                </SpTableRow>
+                <SpTableRow value="row4">
+                  <SpTableCell>Row Item Delta</SpTableCell>
+                  <SpTableCell>Row Item Delta</SpTableCell>
+                  <SpTableCell>Row Item Delta</SpTableCell>
+                </SpTableRow>
+                <SpTableRow value="row5">
+                  <SpTableCell>Row Item Echo</SpTableCell>
+                  <SpTableCell>Row Item Echo</SpTableCell>
+                  <SpTableCell>Row Item Echo</SpTableCell>
+                </SpTableRow>
+              </SpTableBody>
+            </SpTable>
+          }
         />
       </Content>
     </>
