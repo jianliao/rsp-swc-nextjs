@@ -416,8 +416,8 @@ const rows = [
           swcChildren={
             <SpTable
               size="m"
-              selects="single"
-              selected={['row3']}
+              selects="multiple"
+              selected={['row1', 'row3']}
               change={(e: any) => {
                 e.stopPropagation();
                 console.log(e.target.selected);
