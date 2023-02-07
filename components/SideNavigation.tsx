@@ -6,10 +6,8 @@ import Link from 'next/link';
 export default function SideNavigation() {
   return (
     <div className={styles.siteSideBar} id="site-overlay">
-      <Link href="/">
-        <a className={styles.siteSideBarHeader}>
-          <h2 className={styles.siteTitle}>Next+RSP+SWC</h2>
-        </a>
+      <Link href="/" className={styles.siteSideBarHeader}>
+        <h2 className={styles.siteTitle}>Next+RSP+SWC</h2>
       </Link>
       <div className={classNames(styles.scrollable, styles.siteNav)}>
         <nav>
@@ -18,43 +16,43 @@ export default function SideNavigation() {
               <a className="spectrum-SideNav-itemLink">Buttons</a>
               <ul className="spectrum-SideNav">
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/actionbutton">
-                    <a className="spectrum-SideNav-itemLink">ActionButton</a>
+                  <Link href="/components/actionbutton" className="spectrum-SideNav-itemLink">
+                    ActionButton
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/actiongroup">
-                    <a className="spectrum-SideNav-itemLink">ActionGroup</a>
+                  <Link href="/components/actiongroup" className="spectrum-SideNav-itemLink">
+                    ActionGroup
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/button">
-                    <a className="spectrum-SideNav-itemLink">Button</a>
+                  <Link href="/components/button" className="spectrum-SideNav-itemLink">
+                    Button
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/buttongroup">
-                    <a className="spectrum-SideNav-itemLink">ButtonGroup</a>
+                  <Link href="/components/buttongroup" className="spectrum-SideNav-itemLink">
+                    ButtonGroup
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/logicbutton">
-                    <a className="spectrum-SideNav-itemLink">LogicButton</a>
+                  <Link href="/components/logicbutton" className="spectrum-SideNav-itemLink">
+                    LogicButton
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/progresscircle">
-                    <a className="spectrum-SideNav-itemLink">ProgressCircle</a>
+                  <Link href="/components/progresscircle" className="spectrum-SideNav-itemLink">
+                    ProgressCircle
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/radio">
-                    <a className="spectrum-SideNav-itemLink">RadioButton</a>
+                  <Link href="/components/radio" className="spectrum-SideNav-itemLink">
+                    RadioButton
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/togglebutton">
-                    <a className="spectrum-SideNav-itemLink">ToggleButton</a>
+                  <Link href="/components/togglebutton" className="spectrum-SideNav-itemLink">
+                    ToggleButton
                   </Link>
                 </li>
               </ul>
@@ -63,33 +61,33 @@ export default function SideNavigation() {
               <a className="spectrum-SideNav-itemLink">Collections</a>
               <ul className="spectrum-SideNav">
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/actionmenu">
-                    <a className="spectrum-SideNav-itemLink">ActionMenu</a>
+                  <Link href="/components/actionmenu" className="spectrum-SideNav-itemLink">
+                    ActionMenu
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/listbox">
-                    <a className="spectrum-SideNav-itemLink">ListBox</a>
+                  <Link href="/components/listbox" className="spectrum-SideNav-itemLink">
+                    ListBox
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/menutrigger">
-                    <a className="spectrum-SideNav-itemLink">MenuTrigger</a>
+                  <Link href="/components/menutrigger" className="spectrum-SideNav-itemLink">
+                    MenuTrigger
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/tableview">
-                    <a className="spectrum-SideNav-itemLink">TableView</a>
+                  <Link href="/components/tableview" className="spectrum-SideNav-itemLink">
+                    TableView
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/togglebutton">
-                    <a className="spectrum-SideNav-itemLink">ToggleButton</a>
+                  <Link href="/components/togglebutton" className="spectrum-SideNav-itemLink">
+                    ToggleButton
                   </Link>
                 </li>
                 <li className="spectrum-SideNav-item">
-                  <Link href="/components/layout">
-                    <a className="spectrum-SideNav-itemLink">Layout</a>
+                  <Link href="/components/layout" className="spectrum-SideNav-itemLink">
+                    Layout
                   </Link>
                 </li>
               </ul>
