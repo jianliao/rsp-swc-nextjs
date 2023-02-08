@@ -47,10 +47,10 @@ export default function ActionButtonPage() {
   {count} Edits
 </ActionButton>`}
           rspChildren={<ActionButton onPress={() => setCount((c) => c + 1)}>{count} Edits</ActionButton>}
-          swcCode={`<SpActionButton click={() => setCount(c => c + 1)}>
+          swcCode={`<SpActionButton onClick={() => setCount(c => c + 1)}>
   {count} Edits
 </SpActionButton>`}
-          swcChildren={<SpActionButton click={() => setCount((c) => c + 1)}>{count} Edits</SpActionButton>}
+          swcChildren={<SpActionButton onClick={() => setCount((c) => c + 1)}>{count} Edits</SpActionButton>}
         />
         <CodeExample
           title="Icon with Label"

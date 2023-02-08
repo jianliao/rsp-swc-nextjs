@@ -79,7 +79,7 @@ export default function ButtonPage() {
         />
         <CodeExample
           title="Event"
-          rspCode={`<Button variant="primary" onPress={() => setCount(c => c + 1)}>
+          rspCode={`<Button variant="primary" onPress={() => setCount((c) => c + 1)}>
   {count} Dogs
 </Button>`}
           rspChildren={
@@ -87,11 +87,11 @@ export default function ButtonPage() {
               {count} Dogs
             </Button>
           }
-          swcCode={`<SpButton variant="primary" click={() => setCount(c => c + 1)}>
+          swcCode={`<SpButton variant="primary" onClick={() => setCount((c) => c + 1)}>
   {count} Dogs
 </SpButton>`}
           swcChildren={
-            <SpButton variant="primary" click={() => setCount((c) => c + 1)}>
+            <SpButton variant="primary" onClick={() => setCount((c) => c + 1)}>
               {count} Dogs
             </SpButton>
           }
